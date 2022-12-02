@@ -1,0 +1,35 @@
+.button {
+  display: inline-block;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0;
+  text-align: center;
+  border-radius: 30px;
+  padding: 12px 25px;
+  color: $color-white;
+  appearance: none;
+  text-decoration: none;
+  transition: all 0.2s ease-in;
+  box-shadow: none;
+  border: 0;
+  cursor: pointer;
+
+  @include media-breakpoint-down(sm) {
+	font-size: 18px;
+	line-height: 25px;
+	padding: 10px 20px;
+  }
+
+  &,
+  &:focus {
+	outline: none;
+  }
+
+  &:hover {
+	background-color: $color-black;
+	color: $color-white;
+	box-shadow: 0px 4px 12px rgba(10, 0, 20, 0.4);
+  }
+}

@@ -1,0 +1,10 @@
+/* override default variables  & styles */
+$hamburger-layer-width: 34px;
+$hamburger-layer-height: 6px;
+$hamburger-layer-spacing: 4px;
+$hamburger-layer-color: $color-black;
+$hamburger-layer-border-radius: 0;
+$hamburger-padding-x: 15px;
+$hamburger-padding-y: 15px;
+
+@import "node_modules/hamburgers/_sass/hamburgers/hamburgers";

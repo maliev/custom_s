@@ -1,0 +1,60 @@
+body {
+  font-family: $font-family-body;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include media-breakpoint-down(sm) {
+	font-size: 18px;
+	line-height: 25px;
+
+  }
+}
+
+//headlines
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  line-height: 1;
+}
+
+h1,
+.h1 {
+  font-size: 80px;
+  font-weight: 700;
+
+  @include media-breakpoint-down(sm) {
+	font-size: 50px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 60px;
+
+  @include media-breakpoint-down(sm) {
+	font-size: 40px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 40px;
+
+  @include media-breakpoint-down(sm) {
+	font-size: 32px;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 30px;
+
+  @include media-breakpoint-down(sm) {
+	font-size: 23px;
+  }
+}

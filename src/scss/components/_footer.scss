@@ -1,0 +1,13 @@
+.footer {
+  position: relative;
+  padding: 65px 0;
+  backface-visibility: hidden;
+
+  @include media-breakpoint-down(sm) {
+	padding: 35px 0;
+  }
+
+  &__ {
+
+  }
+}

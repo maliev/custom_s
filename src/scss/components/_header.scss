@@ -1,0 +1,48 @@
+.header {
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 101;
+  transition: all 0.3s ease-in;
+  background-color: transparent;
+  filter: drop-shadow(0px 2px 7px rgba(165, 165, 165, 0.15));
+
+  @include media-breakpoint-down(sm) {
+	padding: 7px 0;
+  }
+
+  &.fixed {
+	background-color: #fff;
+	padding-bottom: 13px;
+	padding-top: 13px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .custom-logo-link {
+	display: inline-block;
+	max-width: 262px;
+  }
+
+  &__ {
+
+	&right {
+	  display: flex;
+	  align-items: center;
+
+	  @include media-breakpoint-down(xl) {
+		justify-content: flex-end;
+	  }
+	}
+
+	&row {
+	  align-items: flex-end;
+	  position: relative;
+
+	  @include media-breakpoint-down(xl) {
+		align-items: center;
+	  }
+	}
+  }
+
+}

@@ -1,0 +1,60 @@
+/* settings */
+//default colors
+$color-black: #000000;
+$color-white: #ffffff;
+//colors
+
+
+//section spacing
+$section-spacing: 50px;
+$section-spacing-mobile: 35px;
+
+//fonts
+$font-family-sans-serif: sans-serif;
+
+//header
+$header-height: 120px;
+$header-height-mobile: 80px;
+
+
+//bootstrap imports/overrides
+$body-color: $color-white;
+$font-family-body: $font-family-sans-serif;
+
+// Grid containers
+$container-max-widths: (
+  sm: 750px,
+  md: 754px,
+  lg: 960px,
+  xl: 1250px
+);
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/mixins/breakpoints";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/utilities/api";
+
+// 4. Include any optional Bootstrap components as you like
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/forms";
+
+//mixins
+@mixin set-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin set-visible {
+  opacity: 1;
+  visibility: visible;
+}
