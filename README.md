@@ -1,6 +1,6 @@
 # WordPress starter theme "Clientname" based on _s
 
-Replace default name "Clientname" pay attention to match all the cases.
+### Replace default name "Clientname" pay attention to match all the cases.
 - Clientname
 - some_clientname
 - some-clientname
@@ -10,8 +10,11 @@ Put your fonts to /assets/fonts and add font-face imports to  __font-faces.scss
 Define headlines or body or default paragraph font styles etc. in the __fonts.scss file  
 Define bootstrap/hamburger or custom variables
 
-Requirements:  
-**PHP 8**, **Advanced Custom Fields Pro**
+### Dependencies:   
+- PHP 8   
+- WordPress >= 6.0
+- WordPress plugin "Advanced Custom Fields Pro" >= 6
+- Node >= v16
 
 All WordPress core blocks except paragraph/spacer & your acf blocks are removed by default, your can add them individually back here:
 
