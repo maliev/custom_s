@@ -2,7 +2,7 @@
 // Register a header/hero block.
 acf_register_block_type( [
 	'name'            => 'header',
-	'title'           => __( 'Header/Hero Block' ),
+	'title'           => __( 'Header/Hero' ),
 	'description'     => __( 'A custom block: header.' ),
 	'render_template' => 'template-parts/blocks/header.php',
 	'mode'            => 'edit',

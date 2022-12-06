@@ -18,8 +18,8 @@
             },
             "default_value": "",
             "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
+            "placeholder": "Page title is default value",
+            "prepend": "H1",
             "append": ""
         },
         {
@@ -39,8 +39,8 @@
             "default_value": "",
             "maxlength": "",
             "rows": "",
-            "placeholder": "",
-            "new_lines": ""
+            "placeholder": "Placeholder Text",
+            "new_lines": "br"
         },
         {
             "key": "field_638f34f1f090f",
@@ -77,5 +77,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670330079
+    "modified": 1670342805
 }

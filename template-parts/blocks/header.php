@@ -8,19 +8,21 @@
  * @param (int|string) $post_id The post ID this block is saved to.
  */
 // create class attribute allowing for custom "className" values && adding classes from admin panel if exist
-$className = basename( __FILE__, '.php' ) . ( ! empty( $block['className'] ) ? ' ' . $block['className'] : '' );
+$className     = basename( __FILE__, '.php' ) . ( ! empty( $block['className'] ) ? ' ' . $block['className'] : '' );
 //frontend
-if ( ! is_admin() ) : ?>
+if ( ! is_admin() ) :
+	$title = get_field( 'header__title' );
+	$paragraph = get_field( 'header__text' );
+	$button    = get_field( 'header__button' );
+	?>
 	<section class="section <?= $className ?>">
 		<div class="container">
-			<?php if ( $title = get_field( 'header__title' ) ): ?>
-				<h1><?= $title ?></h1>
-			<?php endif; ?>
-			<?php if ( $paragraph = get_field( 'header__text' ) ): ?>
+			<h1><?= ! empty( $title ) ? $title : get_the_title() ?></h1>
+			<?php if ( ! empty( $paragraph ) ): ?>
 				<p><?= $paragraph ?></p>
 			<?php endif; ?>
-			<?php if ( $button = get_field( 'header__button' ) ): ?>
-				<a href="<?= $button['url'] ?>" class="button" <?= $button['target'] ? 'target="' . $button['target'] . '"' : '' ?>><?= $button['title'] ?></a>
+			<?php if ( ! empty( $button ) ): ?>
+				<a href="<?= $button['url'] ?? '' ?>" class="button" <?= $button['target'] ? 'target="' . $button['target'] . '"' : '' ?>><?= $button['title'] ?? '' ?></a>
 			<?php endif; ?>
 		</div>
 	</section>
