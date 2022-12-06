@@ -183,7 +183,7 @@ add_filter( 'block_categories_all', 'custom_block_categories', 10, 2 );
  */
 function register_acf_block_types(): void {
 	if ( function_exists( 'acf_register_block_type' ) ) {
-		foreach ( glob( get_template_directory() . '/inc/blocks/*.php' ) as $filename ) {
+		foreach ( glob( get_template_directory() . '/inc/blocks-registrations/*.php' ) as $filename ) {
 			include_once $filename;
 		}
 	}
