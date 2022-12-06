@@ -289,7 +289,7 @@ add_filter( 'allowed_block_types_all', 'some_clientname_allowed_block_types', 10
  * Wysiwyg formate
  */
 
-add_filter( 'tiny_mce_before_init', function ( $settings ) {
+/*add_filter( 'tiny_mce_before_init', function ( $settings ) {
 	
 	$settings['block_formats'] = 'Paragraph=p;H1=h1;H2=h2;H3=h3;H4=h4';
 	// make sure we don't override other custom <code>content_css</code> files
@@ -302,7 +302,7 @@ add_filter( 'tiny_mce_before_init', function ( $settings ) {
 	
 	return $settings;
 	
-} );
+} );*/
 
 add_filter( 'acf/fields/wysiwyg/toolbars', 'my_toolbars' );
 function my_toolbars( $toolbars ) {
