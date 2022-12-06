@@ -1,4 +1,4 @@
-WordPress starter theme "Clientname" based on _s
+# WordPress starter theme "Clientname" based on _s
 
 Replace default name "Clientname" pay attention to match all the cases.
 - Clientname
@@ -13,9 +13,10 @@ Define bootstrap/hamburger or custom variables
 Requirements:  
 **PHP 8**, **Advanced Custom Fields Pro**
 
-All WordPress core blocks except paragraph/spacer & your acf blocks are removed by default, your can add them individually back here "custom-functions.php":
+All WordPress core blocks except paragraph/spacer & your acf blocks are removed by default, your can add them individually back here:
 
 ```
+//custom-functions.php
 function some_clientname_allowed_block_types( $block_editor_context, $editor_context ): array|bool {
 	if ( function_exists( 'acf_get_block_types' ) ) {
 		$allowedBlocks = array_keys( acf_get_block_types() );
