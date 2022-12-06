@@ -6,7 +6,11 @@
 @import "settings/basics";
 @import "settings/button";
 
-//componentns
+//default componentns
 @import "components/header";
 @import "components/navigation";
 @import "components/footer";
+
+//custom components
+@import "components/img-full";
+

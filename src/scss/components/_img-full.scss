@@ -1,0 +1,23 @@
+.img-full {
+  &__ {
+	&img-wrap {
+	  overflow: hidden;
+	  position: relative;
+	  width: 100%;
+	}
+
+	&img-wrap,
+	&img {
+	  margin: 0 auto;
+	  display: block;
+	}
+
+	&img {
+	  object-fit: cover;
+	  object-position: center;
+	  aspect-ratio: 72/25;
+	  width: 100%;
+	}
+  }
+}
+
