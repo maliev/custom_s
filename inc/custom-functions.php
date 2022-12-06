@@ -265,17 +265,25 @@ add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
 
 /**
  * Allow only ACF Blocks
- * @return array
+ *
+ * @param $block_editor_context
+ * @param $editor_context
+ *
+ * @return array|bool
  */
-function trendreport_allowed_block_types(): array {
-	$allowedBlocks = array_keys( acf_get_block_types() );
-	//add needed core blocks
-	array_push( $allowedBlocks, 'core/spacer', 'core/paragraph' );
+function some_clientname_allowed_block_types( $block_editor_context, $editor_context ): array|bool {
+	if ( function_exists( 'acf_get_block_types' ) ) {
+		$allowedBlocks = array_keys( acf_get_block_types() );
+		//add needed core blocks
+		array_push( $allowedBlocks, 'core/spacer', 'core/paragraph' );
+		
+		return $allowedBlocks;
+	}
 	
-	return $allowedBlocks;
+	return $block_editor_context;
 }
 
-add_filter( 'allowed_block_types_all', 'trendreport_allowed_block_types', 10, 2 );
+add_filter( 'allowed_block_types_all', 'some_clientname_allowed_block_types', 10, 2 );
 
 /**
  * Wysiwyg formate
