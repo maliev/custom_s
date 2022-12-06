@@ -368,10 +368,10 @@ function getFirstBlockID() {
 /**
  * Add style for Admin Menu Post type and icons, theme settings
  **/
-function custom_admin_style(): void {
+/*function custom_admin_style(): void {
 	wp_enqueue_style( 'my-admin-style', get_template_directory_uri() . '/assets/css/admin-styles.min.css' );
 }
-add_action( 'admin_enqueue_scripts', 'custom_admin_style' );
+add_action( 'admin_enqueue_scripts', 'custom_admin_style' );*/
 
 
 /**
