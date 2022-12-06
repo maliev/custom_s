@@ -46,12 +46,12 @@ function some_clientname_setup(): void {
 		*/
 	add_theme_support( 'post-thumbnails' );
 	
-	// This theme uses wp_nav_menu() in one location.
+	//register nav menus
 	register_nav_menus(
 		[
-			'primary' => esc_html__( 'Primary', 'trendreport-theme' ),
-			'social'  => esc_html__( 'Social', 'trendreport-theme' ),
-			'footer'  => esc_html__( 'Footer', 'trendreport-theme' ),
+			'primary' => esc_html__( 'Primary', 'some_clientname-theme' ),
+			'social'  => esc_html__( 'Social', 'some_clientname-theme' ),
+			'footer'  => esc_html__( 'Footer', 'some_clientname-theme' ),
 		]
 	);
 	
