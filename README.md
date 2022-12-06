@@ -1,4 +1,4 @@
-# WordPress starter theme "Clientname" based on _s
+# WordPress starter theme "Clientname" based on [_s](https://github.com/automattic/_s)
 
 ### Replace default name "Clientname" pay attention to match all the cases.
 - Clientname
