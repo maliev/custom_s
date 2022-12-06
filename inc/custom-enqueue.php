@@ -33,9 +33,9 @@ function filePath( $file ): string {
 	return ( get_template_directory_uri() . '/assets/' . $folder . $file );
 }
 
-function some_clientname_scripts(): void {
-	wp_enqueue_style( 'some_clientname-style', filePath( 'main.min.css' ), [], fileTimeVersion( 'main.min.css' ) );
-	wp_enqueue_script( 'some_clientname-main-js', filePath( 'main.min.js' ), [], fileTimeVersion( 'main.min.js' ), true );
+function customs_scripts(): void {
+	wp_enqueue_style( 'customs-style', filePath( 'main.min.css' ), [], fileTimeVersion( 'main.min.css' ) );
+	wp_enqueue_script( 'customs-main-js', filePath( 'main.min.js' ), [], fileTimeVersion( 'main.min.js' ), true );
 }
 
-add_action( 'wp_enqueue_scripts', 'some_clientname_scripts' );
+add_action( 'wp_enqueue_scripts', 'customs_scripts' );

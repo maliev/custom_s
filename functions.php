@@ -1,10 +1,10 @@
 <?php
 /**
- * some_clientname functions and definitions
+ * customs functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package some_clientname
+ * @package customs
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -19,14 +19,14 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function some_clientname_setup(): void {
+function customs_setup(): void {
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
 		* If you're building a theme based on Stiftung Forum Recht, use a find and replace
-		* to change 'some_clientname' to the name of your theme in all the template files.
+		* to change 'customs' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'some_clientname', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'customs', get_template_directory() . '/languages' );
 	
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -49,9 +49,9 @@ function some_clientname_setup(): void {
 	//register nav menus
 	register_nav_menus(
 		[
-			'primary' => esc_html__( 'Primary', 'some_clientname-theme' ),
-			'social'  => esc_html__( 'Social', 'some_clientname-theme' ),
-			'footer'  => esc_html__( 'Footer', 'some_clientname-theme' ),
+			'primary' => esc_html__( 'Primary', 'customs-theme' ),
+			'social'  => esc_html__( 'Social', 'customs-theme' ),
+			'footer'  => esc_html__( 'Footer', 'customs-theme' ),
 		]
 	);
 	
@@ -76,7 +76,7 @@ function some_clientname_setup(): void {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'some_clientname_custom_background_args',
+			'customs_custom_background_args',
 			[
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -109,7 +109,7 @@ function some_clientname_setup(): void {
 	add_image_size( 's', 600, 600 );
 }
 
-add_action( 'after_setup_theme', 'some_clientname_setup' );
+add_action( 'after_setup_theme', 'customs_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -118,11 +118,11 @@ add_action( 'after_setup_theme', 'some_clientname_setup' );
  *
  * @global int $content_width
  */
-function some_clientname_content_width(): void {
-	$GLOBALS['content_width'] = apply_filters( 'some_clientname_content_width', 640 );
+function customs_content_width(): void {
+	$GLOBALS['content_width'] = apply_filters( 'customs_content_width', 640 );
 }
 
-add_action( 'after_setup_theme', 'some_clientname_content_width', 0 );
+add_action( 'after_setup_theme', 'customs_content_width', 0 );
 
 // ******************** START: Requirements  ********************** //
 /**

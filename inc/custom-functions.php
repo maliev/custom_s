@@ -271,7 +271,7 @@ add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
  *
  * @return array|bool
  */
-function some_clientname_allowed_block_types( $block_editor_context, $editor_context ): array|bool {
+function customs_allowed_block_types( $block_editor_context, $editor_context ): array|bool {
 	if ( function_exists( 'acf_get_block_types' ) ) {
 		$allowedBlocks = array_keys( acf_get_block_types() );
 		//add needed core blocks
@@ -283,7 +283,7 @@ function some_clientname_allowed_block_types( $block_editor_context, $editor_con
 	return $block_editor_context;
 }
 
-add_filter( 'allowed_block_types_all', 'some_clientname_allowed_block_types', 10, 2 );
+add_filter( 'allowed_block_types_all', 'customs_allowed_block_types', 10, 2 );
 
 /**
  * Wysiwyg formate

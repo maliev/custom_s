@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package some_clientname
+ * @package customs
  */
 
 get_header();
