@@ -9,13 +9,6 @@
  */
 // create class attribute allowing for custom "className" values && adding classes from admin panel if exist
 $className = basename( __FILE__, '.php' ) . ( ! empty( $block['className'] ) ? ' ' . $block['className'] : '' );
-
-//display preview html on hover
-if ( ! empty( $block['data']['_is_preview'] ) ) : ?>
-	<figure>
-		<img src="<?= get_stylesheet_directory_uri() . '/assets/imgs/previews/hero.jpg' ?>" width="100%" alt="Preview of what the hero custom block appears minimized">
-	</figure>
-<?php endif;
 //frontend
 if ( ! is_admin() ) : ?>
 	<section class="section <?= $className ?>">
@@ -32,7 +25,7 @@ if ( ! is_admin() ) : ?>
 		</div>
 	</section>
 <?php
-//
+//display preview html & on block hover
 elseif ( is_admin() && ( $is_preview ?? '' ) ): $screen = get_current_screen(); ?>
-	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/hero.jpg' ?>" style="width: 100%; height: auto" alt="hero.jpg">
+	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/hero.jpg' ?>" style="width: 100%; height: auto" alt="Preview of what the header custom block">
 <?php endif;
