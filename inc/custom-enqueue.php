@@ -36,7 +36,7 @@ function filePath( $file ): string {
 function customs_scripts(): void {
 	wp_enqueue_style( 'customs-style', filePath( 'main.min.css' ), [], fileTimeVersion( 'main.min.css' ) );
 	wp_enqueue_script( 'customs-main-js', filePath( 'main.min.js' ), [], fileTimeVersion( 'main.min.js' ), true );
-	wp_enqueue_script( 'customs-slider-js', filePath( 'slider.min.js' ), [], fileTimeVersion( 'slider.min.js' ), true );
+	wp_enqueue_script( 'customs-gallery-js', filePath( 'gallery.min.js' ), [], fileTimeVersion( 'gallery.min.js' ), true );
 }
 
 add_action( 'wp_enqueue_scripts', 'customs_scripts' );
