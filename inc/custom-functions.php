@@ -179,8 +179,8 @@ function getCustomNavigation( string $navName = 'primary' ): array {
  */
 if ( function_exists( 'acf_add_options_page' ) ) {
 	acf_add_options_page( [
-		'page_title' => 'Optionen',
-		'menu_title' => 'Optionen',
+		'page_title' => 'Options',
+		'menu_title' => 'Options',
 		'menu_slug'  => 'options',
 	] );
 }
