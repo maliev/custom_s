@@ -163,6 +163,7 @@ require get_template_directory() . '/inc/custom-functions.php';
 function custom_block_categories( $categories ): array {
 	
 	return array_merge(
+		$categories,
 		[
 			[
 				'slug'     => 'custom-blocks',
