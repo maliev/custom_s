@@ -3,6 +3,24 @@
     "title": "Block: Image Full Size",
     "fields": [
         {
+            "key": "field_639067474cd41",
+            "label": "Block: Image Full Size",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_638f63849bffb",
             "label": "Image ID",
             "name": "img-full__img",
@@ -46,5 +64,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670341585
+    "modified": 1670408012
 }

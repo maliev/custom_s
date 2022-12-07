@@ -3,6 +3,26 @@
     "title": "Block: Text",
     "fields": [
         {
+            "key": "field_6390675133b93",
+            "label": "Block: Text",
+            "name": "block:_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_638f7374863f9",
             "label": "Text area (WYSIWYG)",
             "name": "text__wysiwyg",
@@ -41,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670345724
+    "modified": 1670408022
 }

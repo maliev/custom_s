@@ -3,6 +3,24 @@
     "title": "Block: Header",
     "fields": [
         {
+            "key": "field_63906737c384c",
+            "label": "Block: Header",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_638f34adf090d",
             "label": "Headline (Claim)",
             "name": "header__title",
@@ -77,5 +95,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670342805
+    "modified": 1670408001
 }

@@ -3,6 +3,24 @@
     "title": "Block: Call-To-Action (CTA)",
     "fields": [
         {
+            "key": "field_63906708c5395",
+            "label": "Block: Call-To-Action (CTA)",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_638f7944bda3d",
             "label": "Background",
             "name": "call-to-action__bg",
@@ -104,5 +122,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670404154
+    "modified": 1670407975
 }
