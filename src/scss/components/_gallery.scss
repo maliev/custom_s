@@ -1,0 +1,78 @@
+// import swiper styles
+@import '~swiper/css';
+@import '~swiper/css/navigation';
+
+.gallery {
+  position: relative;
+  padding: $section-spacing 0;
+
+  @include media-breakpoint-down(sm) {
+	padding: $section-spacing-mobile 0;
+  }
+
+  &__ {
+	&inner {
+	  position: relative;
+	}
+
+	&title {
+	  margin-bottom: 30px;
+	}
+
+	&caption {
+	  font-style: italic;
+	}
+
+	&img {
+	  max-height: 692px;
+	  height: 100%;
+	  width: 100%;
+	  object-fit: cover;
+
+	  @include media-breakpoint-down(sm) {
+		max-height: 182px;
+	  }
+	}
+
+	&navigation {
+	  display: flex;
+	  position: absolute;
+	  top: 20px;
+	  right: 20px;
+	  width: 100px;
+	  z-index: 3;
+	  opacity: 0;
+	  transition: all 0.3s ease-in;
+
+	  @include media-breakpoint-down(sm) {
+		display: none;
+	  }
+
+	  .gallery:not(.is--image) & {
+		opacity: 1;
+	  }
+
+	  .gallery__button {
+		line-height: 0;
+		cursor: pointer;
+
+		&::before,
+		&::after {
+		  display: none;
+		}
+
+		&.disabled_swiper_button {
+		  .gallery:not(.is--image) & {
+			opacity: 0.3;
+			cursor: auto;
+			pointer-events: none;
+		  }
+		}
+
+		&:not(:last-child) {
+		  margin-right: 17px;
+		}
+	  }
+	}
+  }
+}

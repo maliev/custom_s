@@ -2,13 +2,13 @@ const path = require('path');
 const WebpackNotifierPlugin = require('webpack-notifier')
 
 module.exports = {
-    entry: [
-        __dirname + '/src/js/main.js',
-        __dirname + '/src/scss/main.scss'
-    ],
+    entry: {
+        main: ['./src/js/main.js', './src/scss/main.scss'],
+        gallery: './src/js/gallery.js'
+    },
     output: {
         path: path.resolve(__dirname, 'assets'),
-        filename: 'js/main.min.js',
+        filename: 'js/[name].min.js',
     },
     module: {
         rules: [
