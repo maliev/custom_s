@@ -12,7 +12,7 @@
 $className = basename( __FILE__, '.php' ) . ( ! empty( $block['className'] ) ? ' ' . $block['className'] : '' );
 $images    = get_field( 'gallery__images' );
 //frontend
-if ( ! is_admin() ) : ?>
+if ( ! is_admin() && ! empty( $images ) ) : ?>
 	<section class="section <?= $className . ' ' . ( count( $images ) <= 1 ? 'is--image' : '' ) ?>">
 		<div class="row g-0">
 			<div class="section__inner col-md-10 offset-md-1">
@@ -26,16 +26,16 @@ if ( ! is_admin() ) : ?>
 					</div>
 					<div class="swiper-wrapper">
 						<!-- Slides -->
-						<?php if ( $images ): ?>
-							<?php foreach ( $images as $image ):  ?>
-								<div class="slider__item swiper-slide">
-									<div class="slider__img-wrap">
+						<?php foreach ( $images as $image ): ?>
+							<div class="slider__item swiper-slide">
+								<div class="slider__img-wrap">
+									<?php if ( ! isset( $image['id'] ) ): ?>
 										<?= wp_get_attachment_image( $image['id'], 'full', '', [ 'class' => 'slider__img' ] ); ?>
 										<div class="slider__caption"><?= wp_get_attachment_caption( $image['id'] ); ?></div>
-									</div>
+									<?php endif; ?>
 								</div>
-							<?php endforeach; ?>
-						<?php endif; ?>
+							</div>
+						<?php endforeach; ?>
 					</div>
 				</div>
 			</div>
