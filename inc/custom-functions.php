@@ -402,25 +402,6 @@ function getBlockDataByName( $content, $blockName ): mixed {
 	return false;
 }
 
-/**
- * Render post content without core paragraph block
- *
- * @return void
- */
-function blocksNoParagraph(): void {
-	global $post;
-	$blocks = parse_blocks( $post->post_content );
-	
-	if ( $blocks ) {
-		foreach ( $blocks as $block ) {
-			if ( ! ( ( 'core/paragraph' ) === $block['blockName'] ) ) {
-				echo render_block( $block );
-			}
-		}
-	}
-}
-
-
 /*** Change authorlink for seo
  * @return string|null
  */
