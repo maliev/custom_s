@@ -22,5 +22,5 @@ if ( ! is_admin() ) : ?>
 <?php
 //display preview html & on block hover
 elseif ( is_admin() && ( $is_preview ?? '' ) ): ?>
-	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/img.jpg' ?>" style="width: 100%; height: auto" alt="Preview of what the image full size custom block">
+	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/img-full.jpg' ?>" style="width: 100%; height: auto" alt="Preview of what the image full size custom block">
 <?php endif;
