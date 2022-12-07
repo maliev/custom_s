@@ -428,3 +428,10 @@ function dontRenderParagraphBlock( $content, $block ) {
 }
 
 add_filter( 'render_block', 'dontRenderParagraphBlock', 10, 2 );
+
+function add_site_favicon(): void {
+	printf( '<link rel="icon" href="%s" />', get_template_directory_uri() . '/assets/icons/favicon-32x32.png' );
+}
+
+add_action( 'login_head', 'add_site_favicon' );
+add_action( 'admin_head', 'add_site_favicon' );
