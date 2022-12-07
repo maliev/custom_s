@@ -11,7 +11,7 @@ Define bootstrap/hamburger or custom variables
 - WordPress plugin "Advanced Custom Fields Pro" >= 6
 - Node >= v16
 
-All WordPress core blocks except paragraph/spacer & your acf blocks are removed by default, your can add them individually back here:
+All WordPress core blocks except paragraph (for the ability to copy&paste blocks) & your acf blocks are removed by default, you can add them individually back here:
 ```
 //custom-functions.php
 function customs_allowed_block_types( $block_editor_context, $editor_context ): array|bool {

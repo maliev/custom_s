@@ -124,26 +124,28 @@ function my_custom_language_switcher(): string {
 
 /**
  * Custom navigation
+ *
  * @param string $navName
  * default navName is primary
+ *
  * @return array
  */
 
 function getCustomNavigation( string $navName = 'primary' ): array {
 	$navigationArray = [];
 	if ( ( $navLocations = get_nav_menu_locations() ) && isset( $navLocations[ $navName ] ) ) {
-		$nav       = wp_get_nav_menu_object( $navLocations[ $navName ] );
-		$navElems = wp_get_nav_menu_items( $nav->term_id );
+		$nav        = wp_get_nav_menu_object( $navLocations[ $navName ] );
+		$navElems   = wp_get_nav_menu_items( $nav->term_id );
 		$mainElemID = 0;
 		
 		foreach ( (array) $navElems as $navElem ) {
 			if ( $navElem->menu_item_parent == 0 ) {
-				$mainElemID = $navElem->db_id;
-				$navID        = $navElem->object_id;
-				$navTitle     = $navElem->title;
-				$navUrl       = $navElem->url;
-				$navTarget    = $navElem->target;
-				$navClasses   = join( ' ', $navElem->classes );
+				$mainElemID        = $navElem->db_id;
+				$navID             = $navElem->object_id;
+				$navTitle          = $navElem->title;
+				$navUrl            = $navElem->url;
+				$navTarget         = $navElem->target;
+				$navClasses        = join( ' ', $navElem->classes );
 				$navigationArray[] = [
 					"id"      => $navID,
 					"title"   => $navTitle,
@@ -153,11 +155,11 @@ function getCustomNavigation( string $navName = 'primary' ): array {
 					"child"   => [],
 				];
 			} else if ( $navElem->menu_item_parent == $mainElemID ) {
-				$navID                                        = $navElem->object_id;
-				$navTitle                                     = $navElem->title;
-				$navUrl                                       = $navElem->url;
-				$navTarget                                    = $navElem->target;
-				$navClasses                                   = join( ' ', $navElem->classes );
+				$navID                                     = $navElem->object_id;
+				$navTitle                                  = $navElem->title;
+				$navUrl                                    = $navElem->url;
+				$navTarget                                 = $navElem->target;
+				$navClasses                                = join( ' ', $navElem->classes );
 				$parent[ count( $parent ) - 1 ]["child"][] = [
 					"id"      => $navID,
 					"title"   => $navTitle,
@@ -275,7 +277,10 @@ function customs_allowed_block_types( $block_editor_context, $editor_context ): 
 	if ( function_exists( 'acf_get_block_types' ) ) {
 		$allowedBlocks = array_keys( acf_get_block_types() );
 		//add needed core blocks
-		array_push( $allowedBlocks, 'core/spacer', 'core/paragraph' );
+		$allowedBlocks[] = 'core/paragraph';
+		
+		//if more core blocks needed remove the line above & enable the line below
+		//array_push( $allowedBlocks,  'core/paragraph' );
 		
 		return $allowedBlocks;
 	}
@@ -316,10 +321,10 @@ function my_toolbars( $toolbars ) {
 	
 	// Add a new toolbar called "Custom Toolbar"
 	// - this toolbar has only 1 row of buttons
-	$toolbars['Custom Toolbar']       = [];
-	$toolbars['Custom Toolbar'][1]    = [ 'formatselect', 'bold', 'underline', 'link', 'bullist', 'superscript' ];
-	$toolbars['Header Toolbar']       = [];
-	$toolbars['Header Toolbar'][1]    = [ 'formatselect', 'bold', 'underline', 'italic' ];
+	$toolbars['Custom Toolbar']    = [];
+	$toolbars['Custom Toolbar'][1] = [ 'formatselect', 'bold', 'underline', 'link', 'bullist', 'superscript' ];
+	$toolbars['Header Toolbar']    = [];
+	$toolbars['Header Toolbar'][1] = [ 'formatselect', 'bold', 'underline', 'italic' ];
 	
 	// Edit the "Full" toolbar and remove 'code'
 	// - delet from array code from http://stackoverflow.com/questions/7225070/php-array-delete-by-value-not-key
@@ -420,17 +425,25 @@ function blocksNoParagraph(): void {
  * @return string|null
  */
 function changeAuthorLink(): ?string {
-    return home_url( 'about' );
+	return home_url( 'about' );
 }
+
 add_filter( 'author_link', 'changeAuthorLink' );
 
 /**  Redirect Author page to about page
  * @return void
  */
 function redirect_author_archive(): void {
-  if(!is_admin() && is_author()) {
-    wp_redirect(home_url('about'));
-    exit();
-  }
+	if ( ! is_admin() && is_author() ) {
+		wp_redirect( home_url( 'about' ) );
+		exit();
+	}
 }
-add_action('template_redirect', 'redirect_author_archive');
+
+add_action( 'template_redirect', 'redirect_author_archive' );
+
+function dontRenderParagraphBlock( $content, $block ) {
+	return ( ( 'core/paragraph' !== $block['blockName'] ) ? $content : '' );
+}
+
+add_filter( 'render_block', 'dontRenderParagraphBlock', 10, 2 );
