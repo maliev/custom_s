@@ -23,9 +23,5 @@
 				</li>
 			<?php endforeach; ?>
 		</ul>
-		<div class="header__footer-nav">
-			<a class="header__footer-nav-link" href="<?= site_url( '/dateschutz' ) ?>"><?= __( 'Datenschutz' ) ?></a>
-			<a class="header__footer-nav-link" href="<?= site_url( '/impressum' ) ?>"><?= __( 'Impressum' ) ?></a>
-		</div>
 	</nav>
 <?php endif; ?>
