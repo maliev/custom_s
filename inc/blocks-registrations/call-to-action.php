@@ -8,7 +8,7 @@ acf_register_block_type( [
 	'mode'            => 'edit',
 	'align'           => 'full',
 	'category'        => 'custom-blocks',
-	'icon'            => 'button',
+	'icon'            => 'feedback',
 	'keywords'        => [ 'Call-to-Action', 'call-to-action', 'Newsletter', 'Contact', 'Kontakt' ],
 	'example'         => [
 		'attributes' => [
