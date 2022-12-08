@@ -1,5 +1,7 @@
-# WordPress starter theme "CustomS" based on [_s](https://github.com/automattic/_s)  
-### Install
+# WordPress starter theme "CustomS" based on [_s](https://github.com/automattic/_s) 
+<img src="screenshot.png" width="500"/>  
+
+### Installation
 Run "npm install" to install all dependencies  
 Put your fonts to /assets/fonts and add font-face imports to  __font-faces.scss   
 Define headlines or body or default paragraph font styles etc. in the __fonts.scss file  
