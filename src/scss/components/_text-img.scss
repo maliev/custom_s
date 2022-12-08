@@ -1,0 +1,106 @@
+.text-img {
+  @include media-breakpoint-down(sm) {
+	padding: $section-spacing-mobile 0;
+  }
+
+  .team__mail {
+	display: inline-block;
+	margin-top: 10px;
+  }
+
+  &__ {
+	&inner {
+	  padding: $section-spacing 0;
+
+	  .type-team & {
+		background-color: inherit;
+
+		@include media-breakpoint-down(sm) {
+		  padding: 0!important;
+		}
+	  }
+	}
+
+	&img-wrap {
+	  overflow: hidden;
+
+	  &:empty {
+		@include media-breakpoint-down(sm) {
+		  display: none;
+		}
+	  }
+
+	  .is--text-img & {
+		order: 2;
+	  }
+
+	  .is--img-text & {
+		@include media-breakpoint-down(sm) {
+		  margin-bottom: 35px;
+		}
+	  }
+
+	  &.is--square {
+		overflow: hidden;
+		padding-top: 100%;
+		position: relative;
+	  }
+	}
+
+	&img {
+	  transform: scale(1);
+	  @include transition;
+
+	  .is--square & {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		left: 0;
+		top: 0;
+	  }
+	}
+
+	&position {
+	  font-weight: 600;
+	  margin-bottom: 15px;
+	}
+
+	&text-wrap {
+	  .is--text-img & {
+		order: 1 !important;
+
+		@include media-breakpoint-down(sm) {
+		  margin-bottom: 35px;
+		}
+	  }
+	}
+
+	&item {
+	  @include media-breakpoint-down(sm) {
+	  	&:first-child {
+		  margin-bottom: 20px;
+		}
+	  }
+	}
+
+	&link {
+	  display: block;
+	  overflow: hidden;
+	  &:hover {
+		.text-img__img {
+		  transform: scale(1.1);
+		}
+	  }
+	}
+
+	&button {
+	  margin-top: 30px;
+
+	  @include media-breakpoint-down(sm) {
+		margin-top: 20px;
+	  }
+	}
+  }
+}
