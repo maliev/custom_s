@@ -167,8 +167,8 @@ function custom_block_categories( $categories ): array {
 		[
 			[
 				'slug'     => 'custom-blocks',
-				'title'    => __( 'Eigene Blöcke' ),
-				'icon'     => 'wordpress',
+				'title'    => __( 'Custom Blocks' ),
+				'icon'     => 'shortcode',
 				'position' => 1,
 			],
 		]
