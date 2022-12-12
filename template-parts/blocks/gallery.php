@@ -29,7 +29,7 @@ if ( ! is_admin() && ! empty( $images ) ) : ?>
 						<?php foreach ( $images as $image ): ?>
 							<div class="slider__item swiper-slide">
 								<div class="slider__img-wrap">
-									<?php if ( ! isset( $image['id'] ) ): ?>
+									<?php if (  isset( $image['id'] ) ): ?>
 										<?= wp_get_attachment_image( $image['id'], 'full', '', [ 'class' => 'slider__img' ] ); ?>
 										<div class="slider__caption"><?= wp_get_attachment_caption( $image['id'] ); ?></div>
 									<?php endif; ?>
