@@ -1,10 +1,10 @@
 {
     "key": "group_638f34ad2c2e1",
-    "title": "Block: Header",
+    "title": "Block: Header\/Hero",
     "fields": [
         {
             "key": "field_63906737c384c",
-            "label": "Block: Header",
+            "label": "Block: Header\/Hero",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -95,5 +95,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670408001
+    "modified": 1670948655
 }
