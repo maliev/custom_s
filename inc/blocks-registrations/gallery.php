@@ -18,6 +18,11 @@ acf_register_block_type( [
 			],
 		],
 	],
+	'enqueue_assets'  => function () {
+		if ( ! is_admin() ) {
+			wp_enqueue_script( 'customs-gallery-js', filePath( 'gallery.min.js' ), [], fileTimeVersion( 'gallery.min.js' ), true );
+		}
+	},
 ] );
 
 

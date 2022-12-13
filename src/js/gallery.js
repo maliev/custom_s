@@ -3,7 +3,7 @@
  */
 import Swiper, {Navigation, Keyboard, A11y} from 'swiper'
 Swiper.use([Navigation, Keyboard, A11y]);
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded",  (event) => {
     const gallery = new Swiper('.slider__init-wrapper', {
         speed: 1500,
         parallax: true,
