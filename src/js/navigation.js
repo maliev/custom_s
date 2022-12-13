@@ -1,6 +1,6 @@
-export let hamburger = function () {
+const hamburger = () => {
     // Hamburger
-    let hamburgerID = document.getElementById('menu-primary-btn'),
+    const hamburgerID = document.getElementById('menu-primary-btn'),
         bodyTag = document.body;
 
     hamburgerID.addEventListener('click', () => {
@@ -20,7 +20,7 @@ export let hamburger = function () {
     })
 }
 
-export let navigation = function () {
+const navigation = () => {
     /*
        Hide header on scroll down and display on scroll up
     */
@@ -33,24 +33,19 @@ export let navigation = function () {
         wHeight = 0,
         wScrollCurrent = window.pageYOffset,
         wScrollBefore = 0,
-        wScrollDiff = 0,
-        menuItems = document.querySelectorAll('.header a[href^="#"'),
-        sections = document.querySelectorAll('section'),
-        current = window.location.pathname,
-        hamburgerID = document.getElementById('menu-primary-btn'),
-        bodyTag = document.body;
+        wScrollDiff = 0
 
 
     //functions
-    let hasElementClass = (element, className) => {
+    const hasElementClass = (element, className) => {
         return element.classList ? element.classList.contains(className) : new RegExp('(^| )' + className + '( |$)', 'gi').test(element.className);
     };
 
-    let addElementClass = (element, className) => {
+    const addElementClass = (element, className) => {
         element.classList ? element.classList.add(className) : element.className += ' ' + className;
     };
 
-    let removeElementClass = (element, className) => {
+    const removeElementClass = (element, className) => {
         element.classList ? element.classList.remove(className) : element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
     };
 
@@ -75,7 +70,8 @@ export let navigation = function () {
 
         wScrollBefore = wScrollCurrent;
     })
-
 }
 
+
+export {hamburger, navigation}
 
