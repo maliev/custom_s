@@ -1,0 +1,7 @@
+codepress-admin-columns
+custom-post-type-ui
+matomo
+wp-simple-firewall
+simple-page-ordering
+wp-fastest-cache
+wordpress-seo
