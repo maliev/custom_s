@@ -7,7 +7,7 @@ acf_register_block_type( [
 	'render_template' => 'template-parts/blocks/img-full.php',
 	'mode'            => 'edit',
 	'align'           => 'full',
-	'category'        => 'custom-blocks',
+	'category'        => 'content',
 	'icon'            => 'format-image',
 	'keywords'        => [ 'Bild (volle Breite)', 'img-full', 'Bild', 'img' ],
 	'example'         => [

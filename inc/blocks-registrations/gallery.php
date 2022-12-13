@@ -7,7 +7,7 @@ acf_register_block_type( [
 	'render_template' => 'template-parts/blocks/gallery.php',
 	'mode'            => 'edit',
 	'align'           => 'full',
-	'category'        => 'custom-blocks',
+	'category'        => 'content',
 	'icon'            => 'format-gallery',
 	'keywords'        => [ 'Galerie', 'Slider', 'images', 'img' ],
 	'example'         => [

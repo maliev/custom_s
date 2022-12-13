@@ -7,7 +7,7 @@ acf_register_block_type( [
 	'render_template' => 'template-parts/blocks/text.php',
 	'mode'            => 'edit',
 	'align'           => 'full',
-	'category'        => 'custom-blocks',
+	'category'        => 'content',
 	'icon'            => 'text-page',
 	'keywords'        => [ 'Fließext', 'text' ],
 	'example'         => [

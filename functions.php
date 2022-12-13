@@ -156,38 +156,4 @@ require get_template_directory() . '/inc/custom-enqueue.php';
 require get_template_directory() . '/inc/custom-functions.php';
 
 // ******************** END: Requirements  ********************** //
-// ******************** START: ACF Blocks  ********************** //
-/**
- * Custom Block Category
- */
-function custom_block_categories( $categories ): array {
-	
-	return array_merge(
-		$categories,
-		[
-			[
-				'slug'     => 'custom-blocks',
-				'title'    => __( 'Custom Blocks' ),
-				'icon'     => 'shortcode',
-				'position' => 1,
-			],
-		]
-	);
-}
 
-add_filter( 'block_categories_all', 'custom_block_categories', 10, 2 );
-
-/** ACF Blocks
- *
- * Every block is registered in one own file.
- */
-function register_acf_block_types(): void {
-	if ( function_exists( 'acf_register_block_type' ) ) {
-		foreach ( glob( get_template_directory() . '/inc/blocks-registrations/*.php' ) as $filename ) {
-			include_once $filename;
-		}
-	}
-}
-
-add_action( 'acf/init', 'register_acf_block_types' );
-// ******************** END: ACF Blocks  ********************** //

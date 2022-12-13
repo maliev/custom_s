@@ -7,7 +7,7 @@ acf_register_block_type( [
 	'render_template' => 'template-parts/blocks/header.php',
 	'mode'            => 'edit',
 	'align'           => 'full',
-	'category'        => 'custom-blocks',
+	'category'        => 'header',
 	'icon'            => 'superhero',
 	'keywords'        => [ 'Header', 'Hero' ],
 	'supports'        => [ 'multiple' => false ],

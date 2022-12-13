@@ -1,4 +1,45 @@
 <?php
+// ******************** START: ACF Blocks  ********************** //
+/**
+ * Custom Block Category
+ */
+function custom_block_categories( $categories ): array {
+	
+	return array_merge(
+		$categories,
+		[
+			[
+				'slug'     => 'header',
+				'title'    => __( 'Header Blocks' ),
+				'icon'     => 'cover-image',
+				'position' => 0,
+			],
+			[
+				'slug'     => 'content',
+				'title'    => __( 'Content Blocks' ),
+				'icon'     => 'shortcode',
+				'position' => 1,
+			],
+		]
+	);
+}
+
+add_filter( 'block_categories_all', 'custom_block_categories', 10, 2 );
+
+/** ACF Blocks
+ *
+ * Every block is registered in one own file.
+ */
+function register_acf_block_types(): void {
+	if ( function_exists( 'acf_register_block_type' ) ) {
+		foreach ( glob( get_template_directory() . '/inc/blocks-registrations/*.php' ) as $filename ) {
+			include_once $filename;
+		}
+	}
+}
+
+add_action( 'acf/init', 'register_acf_block_types' );
+// ******************** END: ACF Blocks  ********************** //
 
 /**
  * Remove unnecessary parts of the admin menu.

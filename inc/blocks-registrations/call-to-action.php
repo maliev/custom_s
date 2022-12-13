@@ -7,7 +7,7 @@ acf_register_block_type( [
 	'render_template' => 'template-parts/blocks/call-to-action.php',
 	'mode'            => 'edit',
 	'align'           => 'full',
-	'category'        => 'custom-blocks',
+	'category'        => 'content',
 	'icon'            => 'feedback',
 	'keywords'        => [ 'Call-to-Action', 'call-to-action', 'Newsletter', 'Contact', 'Kontakt' ],
 	'example'         => [

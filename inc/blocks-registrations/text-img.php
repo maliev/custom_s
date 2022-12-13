@@ -7,7 +7,7 @@ acf_register_block_type( [
 	'render_template' => 'template-parts/blocks/text-img.php',
 	'mode'            => 'edit',
 	'align'           => 'full',
-	'category'        => 'custom-blocks',
+	'category'        => 'content',
 	'icon'            => 'align-right',
 	'keywords'        => [ 'Text-Bild', 'text-img' ],
 	'example'         => [
