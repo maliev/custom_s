@@ -1,6 +1,6 @@
 import {hamburger, navigation} from './navigation.js';
 
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded",  (event)=> {
     hamburger();
     navigation();
 });
