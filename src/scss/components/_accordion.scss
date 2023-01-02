@@ -1,0 +1,6 @@
+//override default accordion values
+//https://getbootstrap.com/docs/5.3/components/accordion/#sass-variables
+$accordion-button-active-bg: $color-black;
+$accordion-button-active-color: $color-white;
+
+@import "~bootstrap/scss/accordion";

@@ -5,7 +5,8 @@ module.exports = {
     entry: {
         main: ['./src/js/main.js', './src/scss/main.scss'],
         'hero-video': ['./src/js/hero-video.js'],
-        gallery: './src/js/gallery.js'
+        gallery: './src/js/gallery.js',
+        accordion: './src/js/accordion.js'
     },
     output: {
         path: path.resolve(__dirname, 'assets'),

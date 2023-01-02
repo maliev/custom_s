@@ -1,0 +1,47 @@
+.section {
+  &:not(.has--background):not(:last-of-type):not(.cta):not(.hero) {
+	padding-bottom: 100px;
+
+	@include media-breakpoint-down(sm) {
+	  padding-bottom: 50px;
+	}
+  }
+
+  &.has--background + .section.cta {
+	margin-top: 0;
+  }
+
+  &:last-of-type.cta {
+	margin-bottom: 0;
+  }
+
+  &.no--padding {
+	padding: 0 !important;
+  }
+
+  &.has--background:not(:last-of-type) {
+	margin-bottom: 100px;
+
+	@include media-breakpoint-down(sm) {
+	  margin-bottom: 50px;
+	}
+
+	& + .has--background {
+	  margin-top: -100px;
+
+	  @include media-breakpoint-down(sm) {
+		margin-top: -50px;
+	  }
+	}
+  }
+
+  &__ {
+	&inner {
+	  position: relative;
+	}
+
+	&title {
+	  margin-bottom: 30px;
+	}
+  }
+}
