@@ -27,5 +27,5 @@ if ( ! is_admin() ) : ?>
 		</div>
 	</section>
 <?php elseif ( is_admin() && ( $is_preview ?? '' ) ): ?>
-	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/quote.jpg' ?>" alt="Preview of the quote block">
+	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/quote.jpg' ?>" style="width: 100%; height: auto" alt="Preview of the quote block">
 <?php endif;
