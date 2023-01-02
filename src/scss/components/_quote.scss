@@ -1,0 +1,32 @@
+$icons-path: '../icons/quote-left.svg';
+
+.quote {
+  &__ {
+	&inner {
+	  padding: 30px 0 30px 30px;
+	  position: relative;
+	  margin: 0;
+
+	  &::before,
+	  &::after {
+		content: "";
+		position: absolute;
+		width: 35px;
+		height: 35px;
+		z-index: -1;
+	  }
+
+	  &::before {
+		background: url(#{$icons-path}) no-repeat;
+		left: -40px;
+		top: 0;
+	  }
+
+	  &::after {
+		background: url('../icons/quote-right.svg') no-repeat;
+		right: -40px;
+		bottom: 0;
+	  }
+	}
+  }
+}
