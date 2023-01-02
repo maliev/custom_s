@@ -1,5 +1,5 @@
 <?php
-// Register a text-img block.
+// Register a text block.
 acf_register_block_type( [
 	'name'            => 'text',
 	'title'           => __( 'Text' ),
