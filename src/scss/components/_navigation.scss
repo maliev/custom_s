@@ -1,3 +1,5 @@
+$hamburger: 'xl';
+
 .navigation {
   &__ {
 	&list {
@@ -23,7 +25,7 @@
 	justify-content: flex-end;
   }
 
-  @include media-breakpoint-down(xl) {
+  @include media-breakpoint-down(#{$hamburger}) {
 	@include set-hidden;
 	position: fixed;
 	top: $header-height;
@@ -53,7 +55,7 @@
 		margin: 0 -10px;
 	  }
 
-	  @include media-breakpoint-down(xl) {
+	  @include media-breakpoint-down(#{$hamburger}) {
 		flex-flow: column;
 		margin-top: 20px;
 		overflow: auto;
@@ -85,7 +87,7 @@
 		}
 	  }
 
-	  @include media-breakpoint-down(xl) {
+	  @include media-breakpoint-down(#{$hamburger}) {
 		font-size: 24px;
 		font-weight: 600;
 		line-height: 31px;
@@ -105,6 +107,10 @@
 	  position: relative;
 	  display: inline-block;
 	  color: $color-black;
+
+	  @include media-breakpoint-down(#{$hamburger}) {
+		color: $color-white;
+	  }
 
 	  &::before {
 		content: "";
@@ -153,7 +159,7 @@
 		}
 	  }
 
-	  @include media-breakpoint-down(xl) {
+	  @include media-breakpoint-down(#{$hamburger}) {
 		padding: 15px 0 15px 20px !important;
 	  }
 	}
@@ -246,7 +252,7 @@
 	  font-weight: 500;
 	  font-size: 18px;
 	  line-height: 22px;
-	  letter-spacing: 0em;
+	  letter-spacing: 0;
 
 	  @include media-breakpoint-up(lg) {
 		&:not(:last-child) {
