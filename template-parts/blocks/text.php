@@ -12,11 +12,9 @@ $className = basename( __FILE__, '.php' ) . ( ! empty( $block['className'] ) ? '
 //frontend
 if ( ! is_admin() ) : ?>
 	<section class="section <?= $className ?>">
-		<div class="container">
-			<?php if ( $text = get_field( 'text__wysiwyg' ) ): ?>
-				<?= apply_filters( 'the_content', $text ) ?>
-			<?php endif; ?>
-		</div>
+		<?php if ( $text = get_field( 'text__wysiwyg' ) ): ?>
+			<?= apply_filters( 'the_content', $text ) ?>
+		<?php endif; ?>
 	</section>
 <?php
 //display preview html & on block hover

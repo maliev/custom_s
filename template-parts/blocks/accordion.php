@@ -13,32 +13,30 @@ $blockID   = $block['id'] ?? '';
 //frontend
 if ( ! is_admin() && $blockID ) : ?>
 	<section class="section accordion-flush <?= $className ?>" id="<?= $blockID ?>">
-		<div class="container">
-			<?php
-			// check if the repeater field has rows of data
-			if ( have_rows( 'accordion__elements' ) ) : ?>
-				<div class="accordion__items">
-					<?php
-					// loop through the rows of data
-					while ( have_rows( 'accordion__elements' ) ) : the_row();
-						$rowIndex = get_row_index();
-						?>
-						<div class="accordion__item accordion-item">
-							<h2 class="accordion__header accordion-header" id="<?= $blockID . 'Heading' . $rowIndex ?>">
-								<button class="accordion__button accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<?= $blockID . 'Collapse' . $rowIndex ?>" aria-expanded="true" aria-controls="<?= $blockID . 'Collapse' . $rowIndex ?>">
-									<?= get_sub_field('accordion__title'); ?>
-								</button>
-							</h2>
-							<div id="<?= $blockID . 'Collapse' . $rowIndex ?>" class="accordion-collapse collapse" aria-labelledby="<?= $blockID . 'Heading' . $rowIndex ?>">
-								<div class="accordion-body">
-									<?= get_sub_field('accordion__text') ?>
-								</div>
+		<?php
+		// check if the repeater field has rows of data
+		if ( have_rows( 'accordion__elements' ) ) : ?>
+			<div class="accordion__items">
+				<?php
+				// loop through the rows of data
+				while ( have_rows( 'accordion__elements' ) ) : the_row();
+					$rowIndex = get_row_index();
+					?>
+					<div class="accordion__item accordion-item">
+						<h2 class="accordion__header accordion-header" id="<?= $blockID . 'Heading' . $rowIndex ?>">
+							<button class="accordion__button accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<?= $blockID . 'Collapse' . $rowIndex ?>" aria-expanded="true" aria-controls="<?= $blockID . 'Collapse' . $rowIndex ?>">
+								<?= get_sub_field( 'accordion__title' ); ?>
+							</button>
+						</h2>
+						<div id="<?= $blockID . 'Collapse' . $rowIndex ?>" class="accordion-collapse collapse" aria-labelledby="<?= $blockID . 'Heading' . $rowIndex ?>">
+							<div class="accordion-body">
+								<?= get_sub_field( 'accordion__text' ) ?>
 							</div>
 						</div>
-					<?php endwhile; ?>
-				</div>
-			<?php endif; ?>
-		</div>
+					</div>
+				<?php endwhile; ?>
+			</div>
+		<?php endif; ?>
 	</section>
 <?php
 //display preview html & on block hover
