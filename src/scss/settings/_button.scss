@@ -6,14 +6,15 @@
   line-height: 26px;
   letter-spacing: 0;
   text-align: center;
-  border-radius: 30px;
+  border-radius: 5px;
   padding: 12px 25px;
-  color: $color-white;
+  color: $color-black;
+  background-color: $color-white;
   appearance: none;
   text-decoration: none;
   transition: all 0.2s ease-in;
   box-shadow: none;
-  border: 0;
+  border: 1px solid $color-black;
   cursor: pointer;
 
   @include media-breakpoint-down(sm) {
