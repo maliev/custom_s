@@ -34,7 +34,7 @@ if ( ! is_admin() ) : ?>
 									<div class="h3 text-img__title"><?= get_field( 'text-img__title' ) ?></div>
 									<div class="text-img__text p-default"><?= get_field( 'text-img__text' ) ?></div>
 									<?php if ( $link ): ?>
-										<a href="<?= $link['url'] ?>" class="button button--grey text-img__button"><?= $link['title'] ?></a>
+										<a href="<?= $link['url'] ?>" class="button button--grey text-img__button" <?= $link['target'] ? 'target="_blank"' : '' ?>><?= $link['title'] ?></a>
 									<?php endif; ?>
 								</div>
 							</div>
