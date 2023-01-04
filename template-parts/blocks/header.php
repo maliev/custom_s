@@ -14,15 +14,31 @@ if ( ! is_admin() ) :
 	$title = get_field( 'header__title' );
 	$paragraph = get_field( 'header__text' );
 	$button    = get_field( 'header__button' );
+	$imgID     = get_field( 'header__image' );
 	?>
-	<section class="section <?= $className ?>">
-		<h1><?= ! empty( $title ) ? $title : get_the_title() ?></h1>
-		<?php if ( ! empty( $paragraph ) ): ?>
-			<p><?= $paragraph ?></p>
-		<?php endif; ?>
-		<?php if ( ! empty( $button ) ): ?>
-			<a href="<?= $button['url'] ?? '' ?>" class="button" <?= $button['target'] ? 'target="' . $button['target'] . '"' : '' ?>><?= $button['title'] ?? '' ?></a>
-		<?php endif; ?>
+	<section class="section <?= str_replace('header', 'hero', $className) ?>">
+		<div class="full-width">
+			<div class="hero__inner">
+				<div class="container">
+					<div class="row">
+						<div class="<?= $imgID ? 'col-md-6' : '' ?>">
+							<h1><?= ! empty( $title ) ? $title : get_the_title() ?></h1>
+							<?php if ( ! empty( $paragraph ) ): ?>
+								<p><?= $paragraph ?></p>
+							<?php endif; ?>
+							<?php if ( ! empty( $button ) ): ?>
+								<a href="<?= $button['url'] ?? '' ?>" class="button" <?= $button['target'] ? 'target="' . $button['target'] . '"' : '' ?>><?= $button['title'] ?? '' ?></a>
+							<?php endif; ?>
+						</div>
+						<?php if ( $imgID ): ?>
+							<div class="col-md-6">
+								<?= wp_get_attachment_image( $imgID, 'm' ) ?>
+							</div>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 <?php
 //display preview html & on block hover
