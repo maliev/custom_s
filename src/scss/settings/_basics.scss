@@ -161,3 +161,21 @@ b {
 	opacity: 1;
   }
 }
+
+/* backgrounds */
+.bg-- {
+  &black {
+	background-color: $color-black;
+	color: $color-white;
+  }
+
+  &white {
+	background-color: $color-white;
+	color: $color-black;
+  }
+
+  &black {
+	background-color: $color-purple;
+	color: $color-white;
+  }
+}
