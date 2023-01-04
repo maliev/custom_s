@@ -36,7 +36,7 @@
             },
             "layout": "row",
             "pagination": 0,
-            "min": 0,
+            "min": 1,
             "max": 0,
             "collapsed": "",
             "button_label": "Add Row",
@@ -105,5 +105,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1672671361
+    "modified": 1672848020
 }

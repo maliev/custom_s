@@ -22,18 +22,20 @@ if ( ! is_admin() && $blockID ) : ?>
 				while ( have_rows( 'accordion__elements' ) ) : the_row();
 					$rowIndex = get_row_index();
 					?>
-					<div class="accordion__item accordion-item">
-						<h2 class="accordion__header accordion-header" id="<?= $blockID . 'Heading' . $rowIndex ?>">
-							<button class="accordion__button accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<?= $blockID . 'Collapse' . $rowIndex ?>" aria-expanded="true" aria-controls="<?= $blockID . 'Collapse' . $rowIndex ?>">
-								<?= get_sub_field( 'accordion__title' ); ?>
-							</button>
-						</h2>
-						<div id="<?= $blockID . 'Collapse' . $rowIndex ?>" class="accordion-collapse collapse" aria-labelledby="<?= $blockID . 'Heading' . $rowIndex ?>">
-							<div class="accordion-body">
-								<?= get_sub_field( 'accordion__text' ) ?>
+					<?php if ( ! empty( $title = get_sub_field( 'accordion__title' ) ) && ! empty( $text = get_sub_field( 'accordion__text' ) ) ): ?>
+						<div class="accordion__item accordion-item">
+							<h2 class="accordion__header accordion-header" id="<?= $blockID . 'Heading' . $rowIndex ?>">
+								<button class="accordion__button accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<?= $blockID . 'Collapse' . $rowIndex ?>" aria-expanded="true" aria-controls="<?= $blockID . 'Collapse' . $rowIndex ?>">
+									<?= $title ?>
+								</button>
+							</h2>
+							<div id="<?= $blockID . 'Collapse' . $rowIndex ?>" class="accordion-collapse collapse" aria-labelledby="<?= $blockID . 'Heading' . $rowIndex ?>">
+								<div class="accordion-body">
+									<?= $text ?>
+								</div>
 							</div>
 						</div>
-					</div>
+					<?php endif; ?>
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>
