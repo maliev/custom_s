@@ -17,18 +17,24 @@ if ( ! is_admin() ) :
 	$video_src = get_field( 'hero-video__video' );
 	?>
 	<section class="section <?= $className ?>">
-		<?php if ( ! empty( $paragraph ) ): ?>
-			<p><?= $paragraph ?></p>
-		<?php endif; ?>
-		<?php if ( ! empty( $button ) ): ?>
-			<a href="<?= $button['url'] ?? '' ?>" class="button" <?= $button['target'] ? 'target="' . $button['target'] . '"' : '' ?>><?= $button['title'] ?? '' ?></a>
-		<?php endif; ?>
-		<div class="hero-video__wrap">
-			<video class="hero-video__video" loop autoplay muted>
-				<source type="video/mp4" src="<?= $video_src['url'] ?>">
-			</video>
+		<div class="full-width">
+			<div class="hero-video__inner">
+				<div class="hero-video__video-wrap">
+					<video class="hero-video__video" loop autoplay muted>
+						<source type="video/mp4" src="<?= $video_src['url'] ?>">
+					</video>
+				</div>
+				<div class="container hero-video__text-wrap">
+					<h1><?= ! empty( $title ) ? $title : get_the_title() ?></h1>
+					<?php if ( ! empty( $paragraph ) ): ?>
+						<p><?= $paragraph ?></p>
+					<?php endif; ?>
+					<?php if ( ! empty( $button ) ): ?>
+						<a href="<?= $button['url'] ?? '' ?>" class="button hero-video__button" <?= $button['target'] ? 'target="' . $button['target'] . '"' : '' ?>><?= $button['title'] ?? '' ?></a>
+					<?php endif; ?>
+				</div>
+			</div>
 		</div>
-		<h1><?= ! empty( $title ) ? $title : get_the_title() ?></h1>
 	</section>
 <?php
 //display preview html & on block hover

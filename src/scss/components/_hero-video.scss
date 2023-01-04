@@ -1,0 +1,30 @@
+.hero-video {
+  &__ {
+	&inner {
+	  display: flex;
+	  align-items: center;
+	  flex-flow: column;
+	  justify-content: center;
+	}
+
+	&video-wrap,
+	&video {
+	  width: 100%;
+	}
+
+	&video {
+	  filter: blur(5px);
+	}
+
+	&text-wrap {
+	  position: relative;
+	  display: flex;
+	  flex-flow: column;
+	  align-items: flex-start;
+	}
+
+	&text-wrap {
+	  position: absolute;
+	}
+  }
+}
