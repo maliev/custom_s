@@ -13,7 +13,11 @@ $className = basename( __FILE__, '.php' ) . ( ! empty( $block['className'] ) ? '
 if ( ! is_admin() ) : ?>
 	<section class="section <?= $className ?>">
 		<?php if ( $text = get_field( 'text__wysiwyg' ) ): ?>
-			<?= apply_filters( 'the_content', $text ) ?>
+			<div class="row">
+				<div class="col-12 col-lg-10 offset-lg-1">
+					<?= apply_filters( 'the_content', $text ) ?>
+				</div>
+			</div>
 		<?php endif; ?>
 	</section>
 <?php
