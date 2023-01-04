@@ -16,9 +16,9 @@ $subline      = get_field( 'call-to-action__subline' );
 $button       = get_field( 'call-to-action__button' );
 //frontend
 if ( ! is_admin() ) : ?>
-	<section class="section has--background cta <?= $className ?>">
+	<section class="section has--background <?= str_replace('call-to-action','cta', $className) ?>">
 		<div class="full-width bg--<?= $bg ?>">
-			<div class="container cta__inner">
+			<div class="container cta__inner section__inner">
 				<div class="row g-0">
 					<div class="col-md-7">
 						<div class="cta__left">
@@ -29,7 +29,7 @@ if ( ! is_admin() ) : ?>
 					<div class="col-md-5">
 						<div class="cta__right">
 							<?php if ( $button ): ?>
-								<a class="button cta__button" href="<?= $button['url'] ?>" title="<?= $button['title'] ?>" target="<?= $button['target'] ?>"><?= $button['title'] ?></a>
+								<a class="button cta__button" href="<?= $button['url'] ?>" title="<?= $button['title'] ?>" <?= $button['target'] ? 'target="_blank"' : '' ?>"><?= $button['title'] ?></a>
 							<?php endif; ?>
 						</div>
 					</div>
