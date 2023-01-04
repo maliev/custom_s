@@ -155,5 +155,10 @@ require get_template_directory() . '/inc/custom-enqueue.php';
  */
 require get_template_directory() . '/inc/custom-functions.php';
 
-// ******************** END: Requirements  ********************** //
+/**
+ * Load more projects with ajax
+ */
 
+require get_template_directory() . '/inc/blog-posts-api.php';
+
+// ******************** END: Requirements  ********************** //

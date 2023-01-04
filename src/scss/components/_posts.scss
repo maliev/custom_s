@@ -1,0 +1,31 @@
+.posts {
+  &__ {
+	&item-wrap {
+	  margin-bottom: 10px;
+	  display: flex;
+	  flex-flow: column;
+	}
+
+	&item {
+	  border: 1px solid $color-black;
+	  background-color: $color-white;
+	  flex: 1;
+	  border-radius: 5px;
+	}
+
+	&item-text {
+	  padding: 10px;
+	}
+
+	&more {
+	  margin-top: 15px;
+	  opacity: 1;
+	  visibility: visible;
+
+	  &.hide {
+		opacity: 0;
+		visibility: hidden;
+	  }
+	}
+  }
+}
