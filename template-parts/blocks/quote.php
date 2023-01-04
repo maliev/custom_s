@@ -10,20 +10,22 @@
 //create class attribute for main section tag with file name as class && add classes from admin panel if exist
 $className = basename( __FILE__, '.php' ) . ( ! empty( $block['className'] ) ? ' ' . $block['className'] : '' );
 //add block alignment as class
-$alignment = ( !empty( $block['align'] ) ? ( ' is--' . $block['align'] ) : '' );
+$alignment = ( ! empty( $block['align'] ) ? ( ' is--' . $block['align'] ) : '' );
 //front
 if ( ! is_admin() ) : ?>
 	<section class="section <?= $className ?>">
 		<div class="row<?= $alignment ?>">
-			<figure class="col-md-6 quote__inner">
-				<blockquote><?= get_field( 'quote__text' ); ?></blockquote>
-				<?php if ( $src = get_field( 'quote__source' ) ): ?>
-					<figcaption><?= $src ?></figcaption>
-				<?php endif; ?>
-				<?php if ( $btn = get_field( 'quote__button' ) ): ?>
-					<a class="button quote__button" href="<?= $btn['url'] ?>"<?= $btn['target'] === '_blank' ? ' target="_blank"' : '' ?>><?= $btn['title'] ?></a>
-				<?php endif; ?>
-			</figure>
+			<?php if ( $text = get_field( 'quote__text' ) ): ?>
+				<figure class="col-md-6 quote__inner">
+					<blockquote><?= $text ?></blockquote>
+					<?php if ( $src = get_field( 'quote__source' ) ): ?>
+						<figcaption><?= $src ?></figcaption>
+					<?php endif; ?>
+					<?php if ( $btn = get_field( 'quote__button' ) ): ?>
+						<a class="button quote__button" href="<?= $btn['url'] ?>"<?= $btn['target'] === '_blank' ? ' target="_blank"' : '' ?>><?= $btn['title'] ?></a>
+					<?php endif; ?>
+				</figure>
+			<?php endif; ?>
 		</div>
 	</section>
 <?php elseif ( is_admin() && ( $is_preview ?? '' ) ): ?>
