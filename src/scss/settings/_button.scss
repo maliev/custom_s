@@ -16,6 +16,7 @@
   box-shadow: none;
   border: 1px solid $color-black;
   cursor: pointer;
+  margin-top: 15px;
 
   @include media-breakpoint-down(sm) {
 	font-size: 18px;
