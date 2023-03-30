@@ -196,12 +196,12 @@ function getCustomNavigation( string $navName = 'primary' ): array {
 					"child"   => [],
 				];
 			} else if ( $navElem->menu_item_parent == $mainElemID ) {
-				$navID                                     = $navElem->object_id;
-				$navTitle                                  = $navElem->title;
-				$navUrl                                    = $navElem->url;
-				$navTarget                                 = $navElem->target;
-				$navClasses                                = join( ' ', $navElem->classes );
-				$parent[ count( $parent ) - 1 ]["child"][] = [
+				$navID                                                       = $navElem->object_id;
+				$navTitle                                                    = $navElem->title;
+				$navUrl                                                      = $navElem->url;
+				$navTarget                                                   = $navElem->target;
+				$navClasses                                                  = join( ' ', $navElem->classes );
+				$navigationArray[ count( $navigationArray ) - 1 ]["child"][] = [
 					"id"      => $navID,
 					"title"   => $navTitle,
 					"classes" => $navClasses,
