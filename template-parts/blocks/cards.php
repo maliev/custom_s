@@ -23,21 +23,19 @@ if ( ! is_admin() ) : ?>
 			<?php
 			// check if the repeater field has rows of data
 			if ( have_rows( 'cards__list' ) ) : ?>
-				<div class="">
-					<?php
-					// loop through the rows of data
-					while ( have_rows( 'cards__list' ) ) : the_row(); ?>
-						<div class="cards__item col-md-2 col-lg-4">
-							<?= wp_get_attachment_image( get_sub_field( 'cards__list-img' ), 'maxSize', '', [ 'class' => 'cards__img' ] ) ?>
-							<?php if ( $itemDesc = get_sub_field( 'cards__list-desc' ) ): ?>
-								<div class="section__desc"><?= $itemDesc ?></div>
-							<?php endif; ?>
-							<?php if ( $itemLink = get_sub_field( 'cards__list-link' ) ): ?>
-								<a href="<?= $itemLink['url'] ?>" class="section__item-link" <?= $itemLink['target'] ? 'target="' . $itemLink['target'] . '"' : '' ?>><?= $itemLink['title'] ?></a>
-							<?php endif; ?>
-						</div>
-					<?php endwhile; ?>
-				</div>
+				<?php
+				// loop through the rows of data
+				while ( have_rows( 'cards__list' ) ) : the_row(); ?>
+					<div class="cards__item col-md-2 col-lg-4">
+						<?= wp_get_attachment_image( get_sub_field( 'cards__list-img' ), 'maxSize', '', [ 'class' => 'cards__img' ] ) ?>
+						<?php if ( $itemDesc = get_sub_field( 'cards__list-desc' ) ): ?>
+							<div class="section__desc"><?= $itemDesc ?></div>
+						<?php endif; ?>
+						<?php if ( $itemLink = get_sub_field( 'cards__list-link' ) ): ?>
+							<a href="<?= $itemLink['url'] ?>" class="section__item-link" <?= $itemLink['target'] ? 'target="' . $itemLink['target'] . '"' : '' ?>><?= $itemLink['title'] ?></a>
+						<?php endif; ?>
+					</div>
+				<?php endwhile; ?>
 			<?php endif; ?>
 		</div>
 	</section>
