@@ -1,10 +1,10 @@
 {
     "key": "group_638f34ad2c2e1",
-    "title": "Block: Header\/Hero",
+    "title": "Block: Hero",
     "fields": [
         {
             "key": "field_63906737c384c",
-            "label": "Block: Header\/Hero",
+            "label": "Block: Hero",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -23,7 +23,7 @@
         {
             "key": "field_638f34adf090d",
             "label": "Headline (Claim)",
-            "name": "header__title",
+            "name": "hero__title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -43,7 +43,7 @@
         {
             "key": "field_638f34e1f090e",
             "label": "Text",
-            "name": "header__text",
+            "name": "hero__text",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -63,7 +63,7 @@
         {
             "key": "field_638f34f1f090f",
             "label": "Button",
-            "name": "header__button",
+            "name": "hero__button",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -79,7 +79,7 @@
         {
             "key": "field_63b5a64dbf051",
             "label": "Image",
-            "name": "header__image",
+            "name": "hero__image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -107,7 +107,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/header"
+                "value": "acf\/hero"
             }
         ]
     ],
@@ -120,5 +120,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1672849113
+    "modified": 1682347552
 }

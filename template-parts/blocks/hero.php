@@ -11,10 +11,10 @@
 $className     = basename( __FILE__, '.php' ) . ( ! empty( $block['className'] ) ? ' ' . $block['className'] : '' );
 //frontend
 if ( ! is_admin() ) :
-	$title = get_field( 'header__title' );
-	$paragraph = get_field( 'header__text' );
-	$button    = get_field( 'header__button' );
-	$imgID     = get_field( 'header__image' );
+	$title = get_field( 'hero__title' );
+	$paragraph = get_field( 'hero__text' );
+	$button    = get_field( 'hero__button' );
+	$imgID     = get_field( 'hero__image' );
 	?>
 	<section class="section <?= str_replace('header', 'hero', $className) ?>">
 		<div class="full-width">
