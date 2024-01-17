@@ -13,16 +13,14 @@ $blockID   = $block['id'] ?? '';
 //frontend
 if ( ! is_admin() && $blockID ) : ?>
 	<section class="section accordion-flush <?= $className ?>" id="<?= $blockID ?>">
-		<?php
-		// check if the repeater field has rows of data
-		if ( have_rows( 'accordion__elements' ) ) : ?>
+		<?php if ( have_rows( 'accordion__elements' ) ) : ?>
 			<div class="accordion__items">
-				<?php
-				// loop through the rows of data
-				while ( have_rows( 'accordion__elements' ) ) : the_row();
-					$rowIndex = get_row_index();
-					?>
-					<?php if ( ! empty( $title = get_sub_field( 'accordion__title' ) ) && ! empty( $text = get_sub_field( 'accordion__text' ) ) ): ?>
+				<?php while ( have_rows( 'accordion__elements' ) ) : the_row();
+					$title = get_sub_field( 'accordion__title' );
+					$text  = get_sub_field( 'accordion__text' );
+					
+					if ( ! empty( $title ) && ! empty( $text ) ) :
+						$rowIndex = get_row_index(); ?>
 						<div class="accordion__item accordion-item">
 							<h2 class="accordion__header accordion-header" id="<?= $blockID . 'Heading' . $rowIndex ?>">
 								<button class="accordion__button accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<?= $blockID . 'Collapse' . $rowIndex ?>" aria-expanded="true" aria-controls="<?= $blockID . 'Collapse' . $rowIndex ?>">
@@ -35,13 +33,14 @@ if ( ! is_admin() && $blockID ) : ?>
 								</div>
 							</div>
 						</div>
-					<?php endif; ?>
-				<?php endwhile; ?>
+					<?php endif;
+				endwhile; ?>
 			</div>
 		<?php endif; ?>
 	</section>
+
 <?php
 //display preview html & on block hover
 elseif ( is_admin() && ( $is_preview ?? '' ) ): $screen = get_current_screen(); ?>
-	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/accordion.jpg' ?>" style="width: 100%; height: auto" alt="Preview of what the header custom block">
+	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/accordion.jpg' ?>" style="width: 100%; height: auto" alt="Preview of accordion block">
 <?php endif;
