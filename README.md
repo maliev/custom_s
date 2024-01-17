@@ -39,4 +39,5 @@ https://user-images.githubusercontent.com/76956279/205954107-fc3e412a-853e-45a5-
 ### Install wp plugins from predefined text file with your must have plugin list !!!wp-cli is required  
 - Define pluginlist in the pluginlist.txt
 - run the command: ```wp plugin install $(<"pluginlist.txt") --allow-root --activate```
+- to update all your plugins: ```wp plugin update --all```
 
