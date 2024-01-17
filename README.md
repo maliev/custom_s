@@ -5,7 +5,7 @@
 Run "npm install" to install all dependencies  
 Put your fonts to /assets/fonts and add font-face imports to  __font-faces.scss   
 Define headlines or body or default paragraph font styles etc. in the __fonts.scss file  
-Define bootstrap/hamburger or custom variables
+Define bootstrap/hamburger or custom variables <br />
 Now you can run your npm build/watcher ```npm run build``` or ```npm run watch```
 
 ### Dependencies:   
