@@ -1,8 +1,8 @@
 /**
  * Slider
  */
-import Swiper, {Navigation, Keyboard, A11y} from 'swiper'
-Swiper.use([Navigation, Keyboard, A11y]);
+import Swiper from 'swiper'
+import {Navigation, Keyboard, A11y} from 'swiper/modules'
 document.addEventListener("DOMContentLoaded",  (event) => {
     const gallery = new Swiper('.slider__init-wrapper', {
         speed: 1500,
@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded",  (event) => {
         allowTouchMove: true,
         a11y: true,
         spaceBetween: 10,
+        modules: [Navigation, Keyboard, A11y],
         lazy: {
             loadPrevNext: true,
         },
@@ -28,39 +29,6 @@ document.addEventListener("DOMContentLoaded",  (event) => {
             575.99: {
                 allowTouchMove: false,
                 slidesPerView: 1,
-            },
-        }
-    });
-
-    const tilesSlider = new Swiper('.three-tiles__container', {
-        speed: 800,
-        slidesPerView: 1,
-        allowTouchMove: true,
-        spaceBetween: 3,
-        loop: false,
-        preventClicks: false,
-        preventClicksPropagation: false,
-        ouchMoveStopPropagation: false,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-            disabledClass: 'disabled_swiper_button',
-        },
-        breakpoints: {
-            // when window width is >= 764px
-            532: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-            },
-            992: {
-                slidesPerView: 3,
-                spaceBetween: 15,
-                allowTouchMove: false,
-            },
-            1201: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                allowTouchMove: false,
             },
         }
     });
