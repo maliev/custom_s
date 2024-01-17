@@ -1,5 +1,4 @@
 <?php
-// Register a header/hero block.
 acf_register_block_type( [
 	'name'            => 'hero',
 	'title'           => __( 'Header/Hero' ),

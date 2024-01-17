@@ -1,5 +1,4 @@
 <?php
-// Register a text-img block.
 acf_register_block_type( [
 	'name'            => 'text-img',
 	'title'           => __( 'Text-Image/Image-Text' ),
@@ -9,7 +8,7 @@ acf_register_block_type( [
 	'align'           => 'full',
 	'category'        => 'content',
 	'icon'            => 'align-right',
-	'keywords'        => [ 'Text-Bild', 'text-img' ],
+	'keywords'        => [ 'text-img' ],
 	'example'         => [
 		'attributes' => [
 			'mode' => 'preview',

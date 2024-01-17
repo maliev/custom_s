@@ -1,5 +1,4 @@
 <?php
-// Register a call-to-action block.
 acf_register_block_type( [
 	'name'            => 'call-to-action',
 	'title'           => __( 'Call-to-Action' ),

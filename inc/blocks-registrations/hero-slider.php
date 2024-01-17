@@ -1,5 +1,4 @@
 <?php
-// Register a hero-slider block.
 acf_register_block_type( [
 	'name'            => 'hero-slider',
 	'title'           => __( 'Hero-Slider' ),

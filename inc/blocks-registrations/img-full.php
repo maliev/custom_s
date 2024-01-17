@@ -1,5 +1,4 @@
 <?php
-// Register a img-full block.
 acf_register_block_type( [
 	'name'            => 'img-full',
 	'title'           => __( 'Image (Full Size)' ),

@@ -1,5 +1,4 @@
 <?php
-// Register a cards block.
 acf_register_block_type( [
 	'name'            => 'cards',
 	'title'           => __( 'Cards' ),

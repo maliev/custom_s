@@ -1,5 +1,4 @@
 <?php
-// Register a gallery block.
 acf_register_block_type( [
 	'name'            => 'gallery',
 	'title'           => __( 'Gallery' ),

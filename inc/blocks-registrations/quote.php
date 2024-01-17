@@ -1,5 +1,4 @@
 <?php
-//register quote acf block
 acf_register_block_type( [
 	'name'            => 'quote',
 	'title'           => __( 'Quote' ),
@@ -8,7 +7,7 @@ acf_register_block_type( [
 	'mode'            => 'edit',
 	'category'        => 'content',
 	'icon'            => 'format-quote',
-	'keywords'        => [ 'Zitat', 'quote' ],
+	'keywords'        => [ 'Quote' ],
 	'example'         => [
 		'attributes' => [
 			'mode' => 'preview',

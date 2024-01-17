@@ -1,5 +1,4 @@
 <?php
-// Register a text block.
 acf_register_block_type( [
 	'name'            => 'text',
 	'title'           => __( 'Text' ),
@@ -9,7 +8,7 @@ acf_register_block_type( [
 	'align'           => 'full',
 	'category'        => 'content',
 	'icon'            => 'text-page',
-	'keywords'        => [ 'Fließext', 'text' ],
+	'keywords'        => [ 'text', 'wysiwyg' ],
 	'example'         => [
 		'attributes' => [
 			'mode' => 'preview',

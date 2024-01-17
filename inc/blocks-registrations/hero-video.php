@@ -1,5 +1,4 @@
 <?php
-// Register a hero-video block.
 acf_register_block_type( [
 	'name'            => 'hero-video',
 	'title'           => __( 'Hero-Video' ),

@@ -1,5 +1,4 @@
 <?php
-// Register a posts block.
 acf_register_block_type( [
 	'name'            => 'posts',
 	'title'           => __( 'Posts' ),
@@ -9,7 +8,7 @@ acf_register_block_type( [
 	'align'           => 'full',
 	'category'        => 'content',
 	'icon'            => 'admin-post',
-	'keywords'        => [ 'Beiträge', 'posts' ],
+	'keywords'        => [ 'Posts', 'query' ],
 	'example'         => [
 		'attributes' => [
 			'mode' => 'preview',

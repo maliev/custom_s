@@ -1,5 +1,4 @@
 <?php
-// Register a text-img block.
 acf_register_block_type( [
 	'name'            => 'accordion',
 	'title'           => __( 'Accordion' ),
