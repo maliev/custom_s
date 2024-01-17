@@ -8,7 +8,7 @@ acf_register_block_type( [
 	'align'           => 'full',
 	'category'        => 'content',
 	'icon'            => 'feedback',
-	'keywords'        => [ 'Call-to-Action', 'call-to-action', 'Newsletter', 'Contact', 'Kontakt' ],
+	'keywords'        => [ 'cta', 'call-to-action', 'newsletter', 'contact' ],
 	'example'         => [
 		'attributes' => [
 			'mode' => 'preview',
