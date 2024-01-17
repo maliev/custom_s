@@ -1,7 +1,7 @@
 <?php
 acf_register_block_type( [
 	'name'            => 'hero',
-	'title'           => __( 'Header/Hero' ),
+	'title'           => __( 'Hero' ),
 	'description'     => __( 'A custom block: hero.' ),
 	'render_template' => 'template-parts/blocks/hero.php',
 	'mode'            => 'edit',
