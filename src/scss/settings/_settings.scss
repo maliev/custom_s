@@ -28,6 +28,8 @@ $container-max-widths: (
   lg: 960px,
   xl: 1250px
 );
+$enable-dark-mode: false;
+
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/functions";
@@ -47,6 +49,7 @@ $container-max-widths: (
 @import "~bootstrap/scss/badge";
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/forms";
 
 //mixins
