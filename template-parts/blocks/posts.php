@@ -53,5 +53,5 @@ if ( ! is_admin() ) : ?>
 <?php
 //display preview html & on block hover
 elseif ( is_admin() && ( $is_preview ?? '' ) ): $screen = get_current_screen(); ?>
-	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/posts.jpg' ?>" style="width: 100%; height: auto" alt="Preview of what the posts custom block">
+	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/posts.jpg' ?>" style="width: 100%; height: auto" alt="Preview of posts custom block">
 <?php endif;

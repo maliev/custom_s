@@ -46,5 +46,5 @@ if ( ! is_admin() ) : ?>
 	</section>
 <?php elseif ( is_admin() && ( $is_preview ?? '' ) ): ?>
 	<h2><?= get_field('text-img__name', $ID) ?></h2>
-	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/text-img.jpg' ?>" style="width: 100%; height: auto" alt="Preview of what the text-img custom block">
+	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/text-img.jpg' ?>" style="width: 100%; height: auto" alt="Preview of text-img custom block">
 <?php endif;

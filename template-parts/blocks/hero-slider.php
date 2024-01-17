@@ -27,5 +27,5 @@ if ( ! is_admin() ) :
 <?php
 //display preview html & on block hover
 elseif ( is_admin() && ( $is_preview ?? '' ) ): $screen = get_current_screen(); ?>
-	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/hero-slider.jpg' ?>" style="width: 100%; height: auto" alt="Preview of what the header custom block">
+	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/hero-slider.jpg' ?>" style="width: 100%; height: auto" alt="Preview of hero slider custom block">
 <?php endif;

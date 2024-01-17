@@ -42,5 +42,5 @@ if ( ! is_admin() ) : ?>
 <?php
 //display preview html & on block hover
 elseif ( is_admin() && ( $is_preview ?? '' ) ): ?>
-	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/cards.jpg' ?>" style="width: 100%; height: auto" alt="Preview of what the cards custom block">
+	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/cards.jpg' ?>" style="width: 100%; height: auto" alt="Preview of cards custom block">
 <?php endif;

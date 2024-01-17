@@ -5,18 +5,19 @@
  * @param array $block The block settings and attributes.
  * @param string $content The block inner HTML (empty).
  * @param bool $is_preview True during AJAX preview.
- * @param   (int|string) $post_id The post ID this block is saved to.
+ * @param (int|string) $post_id The post ID this block is saved to.
  */
 
 // create class attribute allowing for custom "className" values && adding classes from admin panel if exist
-$className     = basename( __FILE__, '.php' ) . ( ! empty( $block['className'] ) ? ' ' . $block['className'] : '' );
-$bg           = get_field( 'call-to-action__bg' );
-$title        = get_field( 'call-to-action__title' );
-$subline      = get_field( 'call-to-action__subline' );
-$button       = get_field( 'call-to-action__button' );
+$className   = basename( __FILE__, '.php' ) . ( ! empty( $block['className'] ) ? ' ' . $block['className'] : '' );
 //frontend
-if ( ! is_admin() ) : ?>
-	<section class="section has--background <?= str_replace('call-to-action','cta', $className) ?>">
+if ( ! is_admin() ) :
+	$bg = get_field( 'cta__bg' );
+	$title   = get_field( 'cta__title' );
+	$subline = get_field( 'cta__subline' );
+	$button  = get_field( 'cta__button' );
+	?>
+	<section class="section has--background <?= str_replace( 'call-to-action', 'cta', $className ) ?>">
 		<div class="full-width bg--<?= $bg ?>">
 			<div class="container cta__inner section__inner">
 				<div class="row g-0">
