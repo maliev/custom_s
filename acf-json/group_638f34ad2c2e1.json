@@ -1,6 +1,6 @@
 {
     "key": "group_638f34ad2c2e1",
-    "title": "Block: Hero",
+    "title": "Block: Header\/Hero",
     "fields": [
         {
             "key": "field_63906737c384c",
@@ -22,7 +22,7 @@
         },
         {
             "key": "field_638f34adf090d",
-            "label": "Headline (Claim)",
+            "label": "Headline",
             "name": "hero__title",
             "aria-label": "",
             "type": "text",
@@ -45,7 +45,7 @@
             "label": "Text",
             "name": "hero__text",
             "aria-label": "",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -55,10 +55,10 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "Placeholder Text",
-            "new_lines": "br"
+            "tabs": "all",
+            "toolbar": "custom_toolbar",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_638f34f1f090f",
@@ -120,5 +120,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682347552
+    "modified": 1705485022
 }

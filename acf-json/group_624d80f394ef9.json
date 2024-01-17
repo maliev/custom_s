@@ -42,8 +42,8 @@
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
+            "ui": 1,
+            "ajax": 1,
             "placeholder": ""
         },
         {
@@ -82,9 +82,9 @@
             },
             "default_value": "",
             "tabs": "all",
-            "toolbar": "full",
+            "toolbar": "custom_toolbar",
             "media_upload": 0,
-            "delay": 0
+            "delay": 1
         },
         {
             "key": "field_624d8f504d54b",
@@ -146,5 +146,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670513564
+    "modified": 1705485554
 }

@@ -94,7 +94,7 @@
                     "label": "Text",
                     "name": "hero-slider__elements_text",
                     "aria-label": "",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -104,10 +104,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "placeholder": "Placeholder Text",
-                    "new_lines": "br",
+                    "tabs": "all",
+                    "toolbar": "custom_toolbar",
+                    "media_upload": 0,
+                    "delay": 1,
                     "parent_repeater": "field_6398a7535acf4"
                 },
                 {
@@ -148,5 +148,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670950435
+    "modified": 1705485730
 }

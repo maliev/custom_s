@@ -22,11 +22,11 @@
         },
         {
             "key": "field_638f7944bda3d",
-            "label": "Background",
-            "name": "call-to-action__bg",
+            "label": "Background color",
+            "name": "cta__bg",
             "aria-label": "",
             "type": "select",
-            "instructions": "",
+            "instructions": "The colours should be defined in the list here and in the \"_basics.scss\" file under the comment  \r\n\/* backgrounds *\/",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -43,14 +43,14 @@
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
+            "ui": 1,
+            "ajax": 1,
             "placeholder": ""
         },
         {
             "key": "field_638f798fbda3e",
             "label": "Title",
-            "name": "call-to-action__title",
+            "name": "cta__title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -70,7 +70,7 @@
         {
             "key": "field_638f799ebda3f",
             "label": "Subline",
-            "name": "call-to-action__subline",
+            "name": "cta__subline",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -90,7 +90,7 @@
         {
             "key": "field_638f7a22bda40",
             "label": "Button",
-            "name": "call-to-action__button",
+            "name": "cta__button",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -122,5 +122,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670407975
+    "modified": 1705484486
 }

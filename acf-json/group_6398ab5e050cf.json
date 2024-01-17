@@ -22,7 +22,7 @@
         },
         {
             "key": "field_6398ab5e0a3f8",
-            "label": "Headline (Claim)",
+            "label": "Headline",
             "name": "hero-video__title",
             "aria-label": "",
             "type": "text",
@@ -45,7 +45,7 @@
             "label": "Text",
             "name": "hero-video__text",
             "aria-label": "",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -55,10 +55,10 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "Placeholder Text",
-            "new_lines": "br"
+            "tabs": "all",
+            "toolbar": "custom_toolbar",
+            "media_upload": 0,
+            "delay": 1
         },
         {
             "key": "field_6398ab5e0a48d",
@@ -115,5 +115,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670951056
+    "modified": 1705485720
 }

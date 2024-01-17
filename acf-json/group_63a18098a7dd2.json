@@ -25,7 +25,7 @@
             "label": "Text",
             "name": "quote__text",
             "aria-label": "",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -35,10 +35,10 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
+            "tabs": "all",
+            "toolbar": "custom_toolbar",
+            "media_upload": 0,
+            "delay": 1
         },
         {
             "key": "field_63a1839fa8559",
@@ -95,5 +95,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671529782
+    "modified": 1705485685
 }

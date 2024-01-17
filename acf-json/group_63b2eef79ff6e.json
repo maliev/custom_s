@@ -81,7 +81,7 @@
                     "tabs": "all",
                     "toolbar": "full",
                     "media_upload": 0,
-                    "delay": 0,
+                    "delay": 1,
                     "parent_repeater": "field_63b2ef0c33cbf"
                 }
             ]
@@ -105,5 +105,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1672848020
+    "modified": 1705484063
 }
