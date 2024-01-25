@@ -1,28 +1,19 @@
-.page:not(.home) .entry-content {
-  a {
-	text-decoration: underline;
-  }
-}
-
-.page {
-  position: relative;
-}
+$colors: (
+  "black": $color-black,
+  "white": $color-white
+);
 
 .header ul,
 .footer ul, {
-  padding: 0 !important;
+  padding: 0;
 
   li {
-	list-style: none !important;
+	list-style: none;
 
 	&::before {
-	  display: none !important;
+	  display: none;
 	}
   }
-}
-
-body {
-  width: 100%;
 }
 
 p {
@@ -34,7 +25,6 @@ p {
   }
 }
 
-//links
 a {
   color: inherit;
   text-decoration: none;
@@ -45,19 +35,11 @@ a {
   }
 }
 
-.underline {
-  text-decoration: underline;
-}
-
 button:focus,
 a:hover,
 a:active,
 a:focus {
   outline: 0;
-}
-
-.entry-content p a {
-  hyphens: auto;
 }
 
 img {
@@ -88,89 +70,23 @@ img {
   }
 }
 
-//z-index
-.z-1 {
-  z-index: 1;
-}
-
-.link-underline {
-  position: relative;
-  padding-bottom: 4px;
-
-  &::before {
-	content: "";
-	width: 100%;
-	height: 2px;
-	background-color: $color-white;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	transition: all 0.2s ease-in;
-	@include set-hidden;
-  }
-
-  &:hover::before {
-	@include set-visible;
-  }
-}
-
-/* hide adminbar on mobile */
-#wpadminbar {
-  @include media-breakpoint-down(xl) {
-	display: none !important;
-  }
-}
-
-/* container */
+/* custom container */
 .container--wide {
   @include media-breakpoint-up(xl) {
 	max-width: 1880px;
   }
 }
 
-strong,
-b {
-  font-weight: 600 !important;
-}
-
-
-//alignment
-.is--left {
-  justify-content: flex-start;
-}
-
-.is--center {
-  justify-content: center;
-}
-
-.is--right {
-  justify-content: flex-end;
-}
-
-
-/* animations */
-.fadeIn {
-  animation: fadeIn 3s;
-}
-
-@keyframes fadeIn {
-  0% {
-	opacity: 0;
-  }
-  100% {
-	opacity: 1;
+/* additional classes */
+@for $i from 1 through 10 {
+  .z-#{$i} {
+	z-index: $i;
   }
 }
 
-/* backgrounds */
-.bg-- {
-  &black {
-	background-color: $color-black;
-	color: $color-white;
-  }
-
-  &white {
-	background-color: $color-white;
-	color: $color-black;
+@each $color-name, $color-value in $colors {
+  .color--#{$color-name},
+  .bg--#{$color-name} {
+	color: $color-value;
   }
 }
