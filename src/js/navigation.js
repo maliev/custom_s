@@ -3,10 +3,12 @@ const hamburger = () => {
     const hamburgerID = document.getElementById('menu-primary-btn'),
         bodyTag = document.body;
 
-    hamburgerID.addEventListener('click', () => {
-        hamburgerID.classList.toggle('is-active')
-        bodyTag.classList.toggle('menu-open')
-    })
+    if (hamburgerID !== undefined && hamburgerID !== null) {
+        hamburgerID.addEventListener('click', () => {
+            hamburgerID.classList.toggle('is-active')
+            bodyTag.classList.toggle('menu-open')
+        })
+    }
 
     //Close Menu if clicked outside menu
     document.addEventListener('click', function (e) {
