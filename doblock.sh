@@ -3,6 +3,8 @@
 echo "# Wanna create a new block huh, give me the name?"
 read -r -p "-> " blockname
 read -r -p "It's $blockname, or what? [y/N] " response
+echo "# And now in german:"
+read -r -p "-> " blocknameGerman
 read -r -p "# Do you need a js file too? [y/N] " jsyesorno
 case "$response" in
 [yY][eE][sS] | [yY])
@@ -17,19 +19,18 @@ case "$response" in
   BLOCK_TEMPLATES_DIR=${SCRIPT_DIR}'/template-parts/blocks/'
   cd ${BLOCK_REGISTER_DIR}
   touch "${blockname}.php"
-  blocknameUpper=$(echo ${blockname} | awk '{print toupper(substr($0,0,1))tolower(substr($0,2))}')
   echo '<?php
         // Register a'${blockname}'block.
         acf_register_block_type( [
-			"name"            => "'${blocknameUpper}'",
-			"title"           => __( "'${blocknameUpper}'" ),
-			"description"     => __( "A custom block: '${blocknameUpper}'." ),
+			"name"            => "'${blockname}'",
+			"title"           => __( "'${blocknameGerman}'" ),
+			"description"     => __( "A custom block: '${blocknameGerman}'." ),
 			"render_template" => "template-parts/blocks/'${blockname}'.php",
 			"mode"            => "edit",
 			"align"           => "full",
 			"category"        => "custom-blocks",
 			"icon"            => "admin-generic",
-			"keywords"        => [ "'${blocknameUpper}'" ],
+			"keywords"        => [ "'${blocknameGerman}'" ],
 			"example"         => [
 				"attributes" => [
 					"mode" => "preview",
@@ -58,7 +59,7 @@ case "$response" in
   touch "${blockname}.php"
   echo '<?php
 		/**
-		 * '${blocknameUpper}' Block Template.
+		 * '${blocknameGerman}' Block Template.
 		 *
 		 * @param array $block The block settings and attributes.
 		 * @param string $content The block inner HTML (empty).
@@ -95,11 +96,11 @@ case "$response" in
   touch "group_${RANDOM_ACF_FIELD_KEY}.json"
   echo '{
     "key": "group_'${RANDOM_ACF_FIELD_KEY}'",
-    "title": "Block: '${blocknameUpper}'",
+    "title": "Block: '${blocknameGerman}'",
     "fields": [
         {
             "key": "field_'${RANDOM_ACF_FIELD_KEY}'",
-            "label": "Block: '${blocknameUpper}'",
+            "label": "Block: '${blocknameGerman}'",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -135,7 +136,7 @@ case "$response" in
     "description": "",
     "show_in_rest": 0,
     "modified": '${RANDOM_ACF_FIELD_MODIFIED}'
-}' > group_${RANDOM_ACF_FIELD_KEY}.json
+}' >group_${RANDOM_ACF_FIELD_KEY}.json
   echo "# It's done now. Don't forget to add a preview img for the new block as png!"
   exit 1
   ;;
