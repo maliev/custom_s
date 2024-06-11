@@ -1,7 +1,10 @@
+aryo-activity-log
 codepress-admin-columns
 custom-post-type-ui
 matomo
 wp-simple-firewall
 simple-page-ordering
 wp-fastest-cache
+updraftplus
 wordpress-seo
+view-admin-as
