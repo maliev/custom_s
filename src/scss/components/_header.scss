@@ -19,12 +19,11 @@
 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
   }
 
-  .custom-logo-link {
-	display: inline-block;
-	max-width: 80px;
-  }
-
   &__ {
+	&logo-link {
+	  display: inline-block;
+	  max-width: 80px;
+	}
 
 	&right {
 	  display: flex;

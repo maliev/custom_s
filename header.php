@@ -31,11 +31,11 @@
 		<div class="container g-0">
 			<div class="header__row row">
 				<div class="site-branding col-8 col-xl-3">
-					<a href="<?= esc_url( site_url() ) ?>" class="custom-logo-link" rel="home">
+					<a href="<?= esc_url( site_url() ) ?>" class="header__logo-link" rel="home">
 						<img src="<?= get_template_directory_uri() . '/assets/icons/logo.svg' ?>"
 						     width="262" height="80"
 						     title="<?php bloginfo( 'name' ) ?>"
-						     class="custom-logo" alt="<?php bloginfo( 'name' ) ?>">
+						     class="header__logo" alt="<?php bloginfo( 'name' ) ?>">
 					</a>
 				</div>
 				<div class="header__right col-4 col-xl-9 justify-content-end">
