@@ -85,8 +85,11 @@ img {
 }
 
 @each $color-name, $color-value in $colors {
-  .color--#{$color-name},
-  .bg--#{$color-name} {
+  .color--#{$color-name} {
 	color: $color-value;
+  }
+
+  .bg--#{$color-name} {
+	background-color: $color-value;
   }
 }
