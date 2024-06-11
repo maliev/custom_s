@@ -1,4 +1,4 @@
-import {hamburger, navigation} from './navigation.js';
+import {Navigation} from './navigation.js';
 
 document.addEventListener("DOMContentLoaded",  (event)=> {
     hamburger();

@@ -72,8 +72,6 @@ $hamburger: 'xl';
 	  letter-spacing: 0.08em;
 
 	  &.is--active {
-		font-weight: 600;
-
 		.navigation__link::before {
 		  @include set-visible;
 		}

@@ -1,79 +1,108 @@
-const hamburger = () => {
-    // Hamburger
-    const hamburgerID = document.getElementById('menu-primary-btn'),
-        bodyTag = document.body;
+import {hasElementClass, addElementClass, removeElementClass} from './helper'
 
-    if (hamburgerID !== undefined && hamburgerID !== null) {
-        hamburgerID.addEventListener('click', () => {
-            hamburgerID.classList.toggle('is-active')
-            bodyTag.classList.toggle('menu-open')
-        })
-    }
-
-    //Close Menu if clicked outside menu
-    document.addEventListener('click', function (e) {
-
-        if (e.target.closest(".menu-primary-btn") === null &&
-            hamburgerID.classList.contains("is-active") &&
-            e.target.closest(".navigation--header") === null) {
-            bodyTag.classList.toggle('menu-open');
-            hamburgerID.classList.toggle('is-active');
-        }
-    })
-}
-
-const navigation = () => {
-    /*
-       Hide header on scroll down and display on scroll up
-    */
-
-    let elSelector = '.header',
+const Navigation = (() => {
+    /* all selectors & constants */
+    const hamburger = document.getElementById('menu-primary-btn'),
+        bodyTag = document.body,
+        headerNavigation = document.querySelector('.navigation--header'),
+        headerItems = headerNavigation.querySelectorAll('.navigation__item'),
+        headerNavSubListWrap = document.querySelector('.navigation__sublist-wrap'),
+        headerSubItems = document.querySelectorAll('.navigation__subitem'),
+        headerElement = document.querySelector('.header'),
         elClassNarrow = 'header--narrow',
-        elNarrowOffset = 50,
-        element = document.querySelector(elSelector),
+        isHamburgerViewport = window.matchMedia("(max-width: 1199px)").matches;
+
+    /* all global variables  */
+    let elNarrowOffset = 50,
+        headerHeight = headerElement.getBoundingClientRect(),
         dHeight = 0,
         wHeight = 0,
         wScrollCurrent = window.pageYOffset,
         wScrollBefore = 0,
-        wScrollDiff = 0
+        wScrollDiff = 0;
 
+    if (hamburger !== undefined && hamburger !== null) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('is-active')
+            bodyTag.classList.toggle('menu-open')
+            headerItems.forEach(item => removeElementClass(item, 'is--visible'))
+        })
 
-    //functions
-    const hasElementClass = (element, className) => {
-        return element.classList ? element.classList.contains(className) : new RegExp('(^| )' + className + '( |$)', 'gi').test(element.className);
-    };
+        //Close Menu if clicked outside menu
+        document.addEventListener('click', function (e) {
 
-    const addElementClass = (element, className) => {
-        element.classList ? element.classList.add(className) : element.className += ' ' + className;
-    };
+            if (e.target.closest(".menu-primary-btn") === null &&
+                hasElementClass(hamburger, "is-active") &&
+                e.target.closest(".navigation--header") === null) {
+                bodyTag.classList.toggle('menu-open');
+                hamburger.classList.toggle('is-active');
+            }
+        })
+    }
 
-    const removeElementClass = (element, className) => {
-        element.classList ? element.classList.remove(className) : element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-    };
-
-    //on windows wheel & scroll
+//on windows wheel & scroll
     if (wScrollCurrent > elNarrowOffset) {
         // toggles "narrow" classname
-        if (!hasElementClass(element, elClassNarrow))
-            addElementClass(element, elClassNarrow);
+        if (!hasElementClass(headerElement, elClassNarrow))
+            addElementClass(headerElement, elClassNarrow);
     }
 
     window.addEventListener('scroll', () => {
-        dHeight = document.body.offsetHeight;
+        dHeight = bodyTag.offsetHeight;
         wHeight = window.innerHeight;
         wScrollCurrent = window.pageYOffset;
         wScrollDiff = wScrollBefore - wScrollCurrent;
 
         if (wScrollCurrent > elNarrowOffset) {
             // toggles "narrow" classname
-            if (!hasElementClass(element, elClassNarrow))
-                addElementClass(element, elClassNarrow);
-        } else removeElementClass(element, elClassNarrow);
+            if (!hasElementClass(headerElement, elClassNarrow))
+                addElementClass(headerElement, elClassNarrow);
+        } else removeElementClass(headerElement, elClassNarrow);
 
         wScrollBefore = wScrollCurrent;
     })
-}
 
+//display subnavigation list on click on navigation item 1 level
+    if (headerItems !== undefined && headerItems !== null) {
+        headerItems.forEach(headerItem => {
+            const navBack = headerItem.querySelector('.navigation__back'),
+                navClose = headerItem.querySelector('.navigation__close')
 
-export {hamburger, navigation}
+            if (navBack !== undefined && navBack !== null && navClose !== undefined && navClose !== null) {
+                navBack.addEventListener('click', event => removeElementClass(event.target.closest('.navigation__item'), 'is--visible'))
+                navClose.addEventListener('click', event => removeElementClass(event.target.closest('.navigation__item'), 'is--visible'))
+            }
+
+            headerItem.addEventListener('click', (event) => {
+                event.stopPropagation()
+
+                const clickedNavigationItem = event.currentTarget,
+                    clickedNavigationTarget = event.target,
+                    clickedNavigationDataTarget = clickedNavigationTarget.dataset.target;
+
+                if (hasElementClass(clickedNavigationTarget, 'navigation__link')) event.preventDefault()
+
+                headerItems.forEach(headerItemInLoop => {
+                    if (headerItemInLoop !== clickedNavigationItem)
+                        removeElementClass(headerItemInLoop, 'is--visible')
+                })
+
+                if (!hasElementClass(clickedNavigationTarget, 'navigation__close') &&
+                    !hasElementClass(clickedNavigationItem, 'is--visible') &&
+                    !hasElementClass(clickedNavigationTarget, 'navigation__back') &&
+                    !hasElementClass(clickedNavigationItem, 'is--visible')) {
+                    addElementClass(clickedNavigationItem, 'is--visible')
+                } else if (hasElementClass(clickedNavigationItem, 'is--visible') &&
+                    clickedNavigationDataTarget === 'parent') {
+                    removeElementClass(clickedNavigationItem, 'is--visible')
+                }
+
+                return false;
+            })
+        })
+    }
+
+})()
+
+export default Navigation;
 

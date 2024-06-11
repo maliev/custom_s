@@ -9,33 +9,43 @@
  */
 
 // Create class attribute allowing for custom "className" values.
-$className = basename( __FILE__, '.php' ) . ( ! empty( $block['className'] ) ? ' ' . $block['className'] : '' );
-$images    = get_field( 'gallery__images' );
+$className   = basename( __FILE__, '.php' ) . ( ! empty( $block['className'] ) ? ' ' . $block['className'] : '' );
+$images      = get_field( 'gallery__images' );
 //frontend
 if ( ! is_admin() && ! empty( $images ) ) : ?>
-	<section class="section <?= $className . ' ' . ( count( $images ) <= 1 ? 'is--image' : '' ) ?>">
-		<div class="row g-0">
-			<div class="section__inner col-md-10 offset-md-1">
-				<?php if ( $title = get_field( 'gallery__title' ) ): ?>
-					<div class="h2 section__title"><?= $title ?></div>
-				<?php endif; ?>
-				<div class="slider__init-wrapper">
-					<div class="slider__navigation">
-						<div class="slider__button swiper-button-prev"></div>
-						<div class="slider__button swiper-button-next"></div>
-					</div>
-					<div class="swiper-wrapper">
-						<!-- Slides -->
-						<?php foreach ( $images as $image ): ?>
-							<div class="slider__item swiper-slide">
-								<div class="slider__img-wrap">
-									<?php if (  isset( $image['id'] ) ): ?>
-										<?= wp_get_attachment_image( $image['id'], 'full', '', [ 'class' => 'slider__img' ] ); ?>
-										<div class="slider__caption"><?= wp_get_attachment_caption( $image['id'] ); ?></div>
-									<?php endif; ?>
+	<section class="fade-in section <?= $className . ' ' . ( count( $images ) <= 1 ? 'is--image' : '' ) ?>">
+		<?php if ( $title = get_field( 'gallery__title' ) ): ?>
+			<div class="h2 section__title"><?= $title ?></div>
+		<?php endif; ?>
+		<div class="row gallery__row">
+			<div class="col-lg-8">
+				<div class="gallery__slider-wrapper">
+					<div class="gallery__slider-init">
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<?php foreach ( $images as $image ): ?>
+								<div class="slider__item swiper-slide">
+									<div class="slider__img-wrap">
+										<?php if ( isset( $image['id'] ) ): ?>
+											<?= wp_get_attachment_image( $image['id'], 'xl', '', [ 'class' => 'gallery__img' ] ); ?>
+										<?php endif; ?>
+									</div>
 								</div>
-							</div>
-						<?php endforeach; ?>
+							<?php endforeach; ?>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="gallery__navigation-wrap">
+					<div class="gallery__navigation">
+						<div class="gallery__nav-button swiper-button-prev">
+							<?= get_svg( 'icons/arrow-left' ) ?>
+						</div>
+						<div class="gallery__nav-button swiper-button-next">
+							<?= get_svg( 'icons/arrow-right' ) ?>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -44,5 +54,5 @@ if ( ! is_admin() && ! empty( $images ) ) : ?>
 <?php
 //display preview html & on block hover
 elseif ( is_admin() && ( $is_preview ?? '' ) ): ?>
-	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/gallery.jpg' ?>" style="width: 100%; height: auto" alt="Preview of gallery custom block">
+	<img src="<?= get_template_directory_uri() . '/assets/imgs/previews/gallery.png' ?>" style="width: 100%; height: auto" alt="Preview of gallery custom block">
 <?php endif;
