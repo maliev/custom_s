@@ -8,3 +8,4 @@ wp-fastest-cache
 updraftplus
 wordpress-seo
 view-admin-as
+find-my-blocks
